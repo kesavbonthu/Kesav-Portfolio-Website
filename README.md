@@ -1,8 +1,18 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Kesav Bonthu — Portfolio Website
+
+Personal portfolio website built with Next.js, TypeScript, Tailwind CSS, shadcn/ui, and Framer Motion.
+
+## Tech Stack
+
+Next.js 15 (App Router) · TypeScript · Tailwind CSS · shadcn/ui · Framer Motion · Lucide React
 
 ## Getting Started
 
-First, run the development server:
+```bash
+npm install
+```
+
+Run the development server:
 
 ```bash
 npm run dev
