@@ -10,9 +10,9 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <div className="bg-slate-950 py-16">
-      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-screen-2xl px-6 sm:px-10 lg:px-16">
         <div className="mb-10">
-          <h1 className="text-3xl font-bold text-white sm:text-4xl">About Me</h1>
+          <h1 className="text-4xl font-extrabold text-white sm:text-5xl">About Me</h1>
           <p className="mt-2 text-slate-400">
             The story behind the product leader.
           </p>
@@ -21,7 +21,7 @@ export default function AboutPage() {
         <div className="space-y-10">
           {/* Professional narrative */}
           <section>
-            <h2 className="text-xl font-semibold text-white mb-4">Professional Story</h2>
+            <h2 className="text-2xl font-bold text-white mb-4">Professional Story</h2>
             <div className="prose prose-invert max-w-none text-slate-400 space-y-4">
               <p>
                 I started my career as a software engineer at Citibank, where I spent three years building
@@ -56,7 +56,7 @@ export default function AboutPage() {
 
           {/* Product philosophy */}
           <section>
-            <h2 className="text-xl font-semibold text-white mb-4">Product Philosophy</h2>
+            <h2 className="text-2xl font-bold text-white mb-4">Product Philosophy</h2>
             <div className="grid gap-4 sm:grid-cols-2">
               {[
                 {
@@ -93,7 +93,7 @@ export default function AboutPage() {
 
           {/* Technical foundation */}
           <section>
-            <h2 className="text-xl font-semibold text-white mb-4">Technical Foundation</h2>
+            <h2 className="text-2xl font-bold text-white mb-4">Technical Foundation</h2>
             <p className="text-slate-400">
               My engineering background spans Java, Spring, React, TypeScript, SQL, Docker, CI/CD, and
               GraphQL — built across 3 years of hands-on platform development at Citi. I&apos;ve since
@@ -109,7 +109,7 @@ export default function AboutPage() {
 
           {/* MBA story */}
           <section>
-            <h2 className="text-xl font-semibold text-white mb-4">MBA & Strategy</h2>
+            <h2 className="text-2xl font-bold text-white mb-4">MBA & Strategy</h2>
             <p className="text-slate-400">
               I came to UW Foster to build the business and strategy layer that complements my technical
               product background. The consulting projects with Microsoft and Amazon Business gave me
@@ -125,7 +125,7 @@ export default function AboutPage() {
 
           {/* Personal */}
           <section>
-            <h2 className="text-xl font-semibold text-white mb-4">Outside Work</h2>
+            <h2 className="text-2xl font-bold text-white mb-4">Outside Work</h2>
             <div className="flex flex-wrap gap-3">
               {profile.interests.map((interest) => (
                 <span

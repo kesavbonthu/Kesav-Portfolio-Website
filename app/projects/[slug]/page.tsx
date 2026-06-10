@@ -31,7 +31,7 @@ export default async function ProjectDetailPage({ params }: Props) {
 
   return (
     <div className="bg-slate-950 py-12">
-      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-screen-2xl px-6 sm:px-10 lg:px-16">
         {/* Back */}
         <Link
           href="/projects"
@@ -50,8 +50,8 @@ export default async function ProjectDetailPage({ params }: Props) {
               </Badge>
             ))}
           </div>
-          <h1 className="text-3xl font-bold text-white sm:text-4xl">{project.title}</h1>
-          <p className="mt-2 text-lg text-slate-400">{project.subtitle}</p>
+          <h1 className="text-4xl font-extrabold text-white sm:text-5xl">{project.title}</h1>
+          <p className="mt-3 text-xl text-slate-400">{project.subtitle}</p>
           {project.company && (
             <p className="mt-1 text-sm text-slate-500">
               {project.company}{project.timeframe ? ` · ${project.timeframe}` : ""}
@@ -173,7 +173,7 @@ export default async function ProjectDetailPage({ params }: Props) {
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <section>
-      <h2 className="mb-3 text-base font-semibold text-white border-b border-slate-800 pb-2">
+      <h2 className="mb-4 text-lg font-bold text-white border-b border-slate-800 pb-2">
         {title}
       </h2>
       {children}

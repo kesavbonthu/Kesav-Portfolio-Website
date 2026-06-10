@@ -10,9 +10,9 @@ export const metadata: Metadata = {
 export default function ResumePage() {
   return (
     <div className="bg-slate-950 py-16">
-      <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-screen-2xl px-6 sm:px-10 lg:px-16">
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-white sm:text-4xl">Resume</h1>
+          <h1 className="text-4xl font-extrabold text-white sm:text-5xl">Resume</h1>
           <p className="mt-2 text-slate-400">
             Download my resume or connect with me directly.
           </p>

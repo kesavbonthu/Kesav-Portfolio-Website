@@ -5,10 +5,10 @@ import { profile } from "@/data/profile";
 export default function Footer() {
   return (
     <footer className="border-t border-slate-800 bg-slate-950">
-      <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-screen-2xl px-6 py-10 sm:px-10 lg:px-16">
         <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
           <div>
-            <Link href="/" className="text-lg font-semibold text-white">
+            <Link href="/" className="text-xl font-bold text-white">
               Kesav<span className="text-blue-400">.</span>
             </Link>
             <p className="mt-1 text-sm text-slate-500 flex items-center gap-1">

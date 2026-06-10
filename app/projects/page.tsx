@@ -23,9 +23,9 @@ export default function ProjectsPage() {
 
   return (
     <div className="bg-slate-950 py-16">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-screen-2xl px-6 sm:px-10 lg:px-16">
         <div className="mb-10">
-          <h1 className="text-3xl font-bold text-white sm:text-4xl">Projects</h1>
+          <h1 className="text-4xl font-extrabold text-white sm:text-5xl">Projects</h1>
           <p className="mt-2 text-slate-400">
             Product work, AI builds, consulting case studies, and data science projects.
           </p>
