@@ -132,17 +132,11 @@ export default function Home() {
 
       <section id="projects" className="border-t border-[color:var(--portfolio-border)] bg-transparent py-20">
         <div className="mx-auto max-w-screen-2xl px-6 sm:px-10 lg:px-16">
-          <div className="mb-12 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
-            <div>
-              <p className="section-eyebrow">02 / Featured Case Studies</p>
-              <h2 className="section-heading mt-4">
-                Product, program, AI, financial services, and enterprise execution in one portfolio
-              </h2>
-            </div>
-            <p className="section-copy max-w-2xl">
-              These are the strongest case studies for demonstrating AI product management,
-              technical product ownership, enterprise delivery, and operating leverage
-            </p>
+          <div className="mb-12">
+            <p className="section-eyebrow">02 / Featured Case Studies</p>
+            <h2 className="section-heading mt-4">
+              Product, program, AI, financial services, and enterprise execution in one portfolio
+            </h2>
           </div>
 
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -160,11 +154,6 @@ export default function Home() {
             <h2 className="section-heading mt-4">
               Personal AI and agentic workflow work beyond core operating roles
             </h2>
-            <p className="section-copy mt-4 max-w-3xl">
-              These projects demonstrate practical AI product experience across LLM-enabled workflows,
-              prompt engineering, recommendation systems, prioritization logic, and workflow automation,
-              with a focus on translating emerging AI capabilities into usable product solutions
-            </p>
           </div>
 
           <div className="grid gap-6 lg:grid-cols-2">
@@ -200,10 +189,6 @@ export default function Home() {
             <h2 className="section-heading mt-4">
               MBA strategy work across enterprise workflow design and payments growth
             </h2>
-            <p className="section-copy mt-4 max-w-3xl">
-              These projects show business analysis, executive communication, market sizing, process design,
-              and stakeholder alignment in settings adjacent to product and program leadership
-            </p>
           </div>
 
           <div className="grid gap-6 lg:grid-cols-2">
@@ -289,10 +274,6 @@ export default function Home() {
             <h2 className="section-heading mt-4">
               Skills grouped by the types of work I do best
             </h2>
-            <p className="section-copy mt-4 max-w-3xl">
-              Rather than one long skills paragraph, these categories map directly to Product Manager,
-              Technical Product Manager, Technical Program Manager, and AI Product Manager roles
-            </p>
           </div>
 
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
@@ -331,10 +312,6 @@ export default function Home() {
               <h2 className="section-heading mt-4">
                 Open to conversations around product, program, AI, and enterprise platform work
               </h2>
-              <p className="section-copy mt-5 max-w-2xl text-lg">
-                I&apos;m currently exploring opportunities where I can combine product thinking,
-                program execution, technical depth, and measurable business impact
-              </p>
             </div>
 
             <div className="grid gap-5 sm:grid-cols-2">

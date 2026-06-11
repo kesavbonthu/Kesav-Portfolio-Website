@@ -176,8 +176,8 @@
 
   .section-heading {
     color: var(--portfolio-ink);
-    font-size: clamp(2.5rem, 4.5vw, 4.25rem);
-    line-height: 1.02;
+    font-size: clamp(2.1rem, 4vw, 4.25rem);
+    line-height: 1.06;
   }
 
   .section-copy {
