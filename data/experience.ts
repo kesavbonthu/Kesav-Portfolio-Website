@@ -49,7 +49,7 @@ export const experiences: Experience[] = [
     company: "Citibank",
     role: "Technical Product Manager",
     startDate: "Jan 2023",
-    endDate: "July 2024",
+    endDate: "Jul 2024",
     location: "Pune, India",
     type: "full-time",
     summary:
@@ -80,9 +80,9 @@ export const experiences: Experience[] = [
   {
     company: "Citibank",
     role: "Software Engineer",
-    startDate: "2019",
-    endDate: "2022",
-    location: "New York, NY",
+    startDate: "Aug 2018",
+    endDate: "Dec 2022",
+    location: "Pune, India",
     type: "full-time",
     summary:
       "Built and modernized internal platforms that improved reliability, release efficiency, reporting capabilities, and operational cost performance at enterprise scale.",
@@ -115,8 +115,8 @@ export const experiences: Experience[] = [
   {
     company: "Microsoft",
     role: "MBA Consultant",
-    startDate: "2024",
-    endDate: "2025",
+    startDate: "Mar 2026",
+    endDate: "Jun 2026",
     location: "Seattle, WA",
     type: "consulting",
     summary:
@@ -141,8 +141,8 @@ export const experiences: Experience[] = [
   {
     company: "Amazon Business",
     role: "MBA Consultant, Payment Products",
-    startDate: "2024",
-    endDate: "2025",
+    startDate: "Jan 2026",
+    endDate: "Mar 2026",
     location: "Seattle, WA",
     type: "consulting",
     summary:

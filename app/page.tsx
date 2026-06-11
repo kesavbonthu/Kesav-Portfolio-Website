@@ -162,8 +162,9 @@ export default function Home() {
               Personal AI and agentic workflow work beyond core operating roles.
             </h2>
             <p className="section-copy mt-4 max-w-3xl">
-              These projects demonstrate hands-on AI product thinking across LLM workflows, prompt design,
-              recommendations, prioritization logic, and workflow automation.
+              These projects demonstrate practical AI product experience across LLM-enabled workflows,
+              prompt engineering, recommendation systems, prioritization logic, and workflow automation,
+              with a focus on translating emerging AI capabilities into usable product solutions.
             </p>
           </div>
 
@@ -407,7 +408,7 @@ export default function Home() {
                   Open to on-site, hybrid, and remote roles
                 </p>
                 <p className="mono-label mt-1 text-[color:var(--portfolio-muted)]">
-                  Open to relocation within the U.S.
+                  Open to relocation within US
                 </p>
               </div>
             </div>
