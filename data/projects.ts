@@ -28,7 +28,7 @@ export const projects: Project[] = [
     timeframe: "2024",
     featured: true,
     summary:
-      "AI-powered job search platform that analyzes role fit, identifies resume gaps, and generates tailored application materials to improve prioritization and application quality.",
+      "AI-powered job search platform that analyzes role fit, identifies resume gaps, and generates tailored application materials to improve prioritization and application quality",
     problem:
       "Job seekers spend significant time manually reviewing job descriptions, estimating fit, editing resumes, and writing cover letters. The process is repetitive, inconsistent, and difficult to scale across dozens of applications.",
     users: ["Job seekers", "MBA students", "Career changers", "Engineers pivoting to PM roles"],
@@ -77,7 +77,7 @@ export const projects: Project[] = [
     timeframe: "2025",
     featured: true,
     summary:
-      "AI-enabled expiry and waste management workflow for healthcare inventory, improving product visibility, expiration tracking, demand-aware replenishment, and operational efficiency while reducing waste, stockouts, and manual review effort.",
+      "AI-enabled expiry and waste management workflow for healthcare inventory, improving product visibility, expiration tracking, demand-aware replenishment, and operational efficiency while reducing waste, stockouts, and manual review effort",
     problem:
       "Healthcare inventory teams often rely on fragmented spreadsheets and manual audits to monitor expiring products, replenishment needs, and cross-location inventory risk. This makes it difficult to spot waste early, prevent stockouts, and prioritize operational action with confidence.",
     users: [
@@ -128,7 +128,7 @@ export const projects: Project[] = [
     timeframe: "2024",
     featured: true,
     summary:
-      "Agentic productivity workflow that converts email threads into prioritized tasks using Gmail integration and LLM-based action extraction.",
+      "Agentic productivity workflow that converts email threads into prioritized tasks using Gmail integration and LLM-based action extraction",
     problem:
       "Important action items get buried in email inboxes, making it hard to identify, prioritize, and follow up on tasks. Switching between inbox and to-do tools adds friction and leads to missed commitments.",
     users: ["Busy professionals", "MBA students managing multiple workstreams", "PMs handling cross-functional communication"],
@@ -176,7 +176,7 @@ export const projects: Project[] = [
     timeframe: "2024–Present",
     featured: true,
     summary:
-      "AI-enabled clinical intake and triage workflow for pediatric endocrinology, improving referral completeness, prioritization, and operational throughput.",
+      "AI-enabled clinical intake and triage workflow for pediatric endocrinology, improving referral completeness, prioritization, and operational throughput",
     problem:
       "Clinical intake and referral workflows were slow, incomplete, and difficult to prioritize manually. Urgent pediatric cases required faster attention but had no automated urgency detection, leading to delays in time-to-appointment.",
     users: [
@@ -237,7 +237,7 @@ export const projects: Project[] = [
     timeframe: "2022–2024",
     featured: true,
     summary:
-      "Enterprise trading workflow platform adopted across global desks to improve workflow consistency, usability, and trader productivity at scale.",
+      "Enterprise trading workflow platform adopted across global desks to improve workflow consistency, usability, and trader productivity at scale",
     problem:
       "Trading users needed a more flexible and unified workflow experience across platforms, with better usability and support for high-volume workflows. Fragmented tooling across desks created inconsistency, reduced efficiency, and limited business visibility.",
     users: [
@@ -295,7 +295,7 @@ export const projects: Project[] = [
     timeframe: "2022–2023",
     featured: false,
     summary:
-      "Real-time revenue dashboard that replaced static email reports and improved business visibility for 90+ stakeholders.",
+      "Real-time revenue dashboard that replaced static email reports and improved business visibility for 90+ stakeholders",
     problem:
       "Business stakeholders relied on static email reports, creating delays, limited interactivity, and poor visibility into revenue performance. There was no way to filter, drill down, or explore data in real time.",
     users: ["Business operations stakeholders", "Revenue managers", "Trading desk leadership", "Finance teams"],
@@ -438,7 +438,7 @@ export const projects: Project[] = [
     timeframe: "2022–2023",
     featured: false,
     summary:
-      "Automated revenue attribution and splitting workflow replacing manual reconciliation processes across Citi business lines.",
+      "Automated revenue attribution and splitting workflow replacing manual reconciliation processes across Citi business lines",
     problem:
       "Revenue splitting across business lines was a manual, error-prone process requiring significant analyst time. Disputes and reconciliation delays created reporting inaccuracies and operational bottlenecks.",
     users: ["Finance teams", "Revenue analysts", "Business line managers"],

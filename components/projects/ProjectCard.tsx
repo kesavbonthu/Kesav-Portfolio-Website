@@ -1,5 +1,3 @@
-import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { type Project } from "@/data/projects";
 
@@ -46,13 +44,6 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         ))}
       </div>
 
-      <Link
-        href={`/projects/${project.slug}`}
-        className="mono-label mt-5 flex items-center gap-1.5 text-[color:var(--portfolio-accent)] transition-colors hover:text-[color:var(--portfolio-highlight)]"
-      >
-        View Case Study
-        <ArrowRight className="h-4 w-4" />
-      </Link>
     </div>
   );
 }

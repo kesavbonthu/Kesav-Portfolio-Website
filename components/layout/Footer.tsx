@@ -54,8 +54,6 @@ export default function Footer() {
             </a>
             <a
               href={profile.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
               className="text-[color:var(--portfolio-muted)] transition-colors hover:text-[color:var(--portfolio-accent)]"
               aria-label="LinkedIn"
             >
@@ -63,8 +61,6 @@ export default function Footer() {
             </a>
             <a
               href={profile.github}
-              target="_blank"
-              rel="noopener noreferrer"
               className="text-[color:var(--portfolio-muted)] transition-colors hover:text-[color:var(--portfolio-accent)]"
               aria-label="GitHub"
             >

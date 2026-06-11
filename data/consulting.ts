@@ -17,9 +17,9 @@ export const consultingProjects: ConsultingProject[] = [
     client: "Microsoft",
     project: "Unified Sales BOM Standardization",
     context:
-      "Microsoft Unified Sales team engaged UW Foster MBA team to address inconsistencies in Sales Bill of Materials (BOM) creation across seller teams.",
+      "Microsoft Unified Sales team engaged UW Foster MBA team to address inconsistencies in Sales Bill of Materials (BOM) creation across seller teams",
     challenge:
-      "Sales BOMs were created inconsistently across teams, slowing deal cycles, creating customer-facing proposal quality issues, and requiring repeated rework. Templates were fragmented, ownership was unclear, and there were no systematic feedback loops to improve quality over time.",
+      "Sales BOMs were created inconsistently across teams, slowing deal cycles, creating customer-facing proposal quality issues, and requiring repeated rework. Templates were fragmented, ownership was unclear, and there were no systematic feedback loops to improve quality over time",
     approach: [
       "Conducted stakeholder interviews with sellers, managers, and sales operations",
       "Audited existing BOM templates and creation workflows",
@@ -56,9 +56,9 @@ export const consultingProjects: ConsultingProject[] = [
     client: "Amazon Business",
     project: "Mexico SMB Payments Strategy",
     context:
-      "Amazon Business Mexico engaged UW Foster MBA team to develop a payments strategy for acquiring and retaining SMB customers across Mexico's diverse payment landscape.",
+      "Amazon Business Mexico engaged UW Foster MBA team to develop a payments strategy for acquiring and retaining SMB customers across Mexico's diverse payment landscape",
     challenge:
-      "Mexico's B2B SMB market spans banked, underbanked, and cash-first customer segments with significantly different payment preferences and adoption barriers. Amazon Business needed clarity on which payment rails to prioritize, in what sequence, to maximize SMB acquisition and long-term retention.",
+      "Mexico's B2B SMB market spans banked, underbanked, and cash-first customer segments with significantly different payment preferences and adoption barriers. Amazon Business needed clarity on which payment rails to prioritize, in what sequence, to maximize SMB acquisition and long-term retention",
     approach: [
       "Sized the Mexico B2B SMB payments market by segment",
       "Mapped available payment rails: credit/debit cards, bank transfers, cash vouchers, BNPL, embedded finance",

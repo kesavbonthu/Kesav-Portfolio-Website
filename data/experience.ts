@@ -21,7 +21,7 @@ export const experiences: Experience[] = [
     location: "Richmond, VA",
     type: "full-time",
     summary:
-      "Own AI-enabled clinical workflow product development for pediatric endocrinology, improving triage accuracy, referral completeness, intake throughput, and scheduling operations.",
+      "Own AI-enabled clinical workflow product development for pediatric endocrinology, improving triage accuracy, referral completeness, intake throughput, and scheduling operations",
     highlights: [
       "Led the 0-to-1 development of an AI-enabled clinical intake and triage workflow for pediatric endocrinology, translating clinician pain points and referral bottlenecks into MVP scope, product requirements, and launch milestones.",
       "Delivered the MVP 20% ahead of schedule by aligning clinical, operational, and engineering stakeholders around a focused roadmap, clear prioritization criteria, and rapid iteration cycles.",
@@ -53,7 +53,7 @@ export const experiences: Experience[] = [
     location: "Pune, India",
     type: "full-time",
     summary:
-      "Owned roadmap, stakeholder alignment, and execution for internal financial technology platforms spanning trading workflows, revenue visibility, automation, and release operations.",
+      "Owned roadmap, stakeholder alignment, and execution for internal financial technology platforms spanning trading workflows, revenue visibility, automation, and release operations",
     highlights: [
       "Drove the 0-to-1 product vision and roadmap for a multi-platform trading solution, translating trader workflows, legacy platform gaps, and business requirements into a scalable product strategy adopted across 6 global trading desks.",
       "Led a six-person cross-functional team across engineering, QA, and business stakeholders to deliver the trading platform MVP, achieving 80% adoption and 110+ monthly active users within the first 3 months of launch.",
@@ -85,7 +85,7 @@ export const experiences: Experience[] = [
     location: "Pune, India",
     type: "full-time",
     summary:
-      "Built and modernized internal platforms that improved reliability, release efficiency, reporting capabilities, and operational cost performance at enterprise scale.",
+      "Built and modernized internal platforms that improved reliability, release efficiency, reporting capabilities, and operational cost performance at enterprise scale",
     highlights: [
       "Built an automated deals pipeline to streamline trade processing workflows, improve operational throughput, and reduce manual intervention, achieving 80% feature utilization among target users.",
       "Expanded processing capacity for high-volume financial workflows, supporting 5% month-over-month revenue growth by enabling faster, more reliable deal execution and downstream processing.",
@@ -120,7 +120,7 @@ export const experiences: Experience[] = [
     location: "Seattle, WA",
     type: "consulting",
     summary:
-      "Worked on a Microsoft Unified consulting project focused on standardizing Sales BOM creation, improving sales enablement workflows, and exploring AI-assisted feedback approaches.",
+      "Worked on a Microsoft Unified consulting project focused on standardizing Sales BOM creation, improving sales enablement workflows, and exploring AI-assisted feedback approaches",
     highlights: [
       "Recommended standardized Sales BOM structure with sizing model (S/M/L)",
       "Designed asset taxonomy and governance structure",
@@ -146,7 +146,7 @@ export const experiences: Experience[] = [
     location: "Seattle, WA",
     type: "consulting",
     summary:
-      "Delivered payment strategy recommendations for Amazon Business Mexico by analyzing market dynamics, competitive landscape, customer segmentation, and payment rail adoption.",
+      "Delivered payment strategy recommendations for Amazon Business Mexico by analyzing market dynamics, competitive landscape, customer segmentation, and payment rail adoption",
     highlights: [
       "Analyzed SMB customer segmentation across banked, underbanked, and cash-first segments",
       "Benchmarked competitor payment options and rails",
@@ -172,7 +172,7 @@ export const experiences: Experience[] = [
     location: "Seattle, WA",
     type: "education",
     summary:
-      "Full-time MBA focused on technology product management, strategy, and entrepreneurship, with coursework and applied projects centered on product leadership.",
+      "Full-time MBA focused on technology product management, strategy, and entrepreneurship, with coursework and applied projects centered on product leadership",
     highlights: [
       "Recipient of Dean's Merit Scholarship",
       "UW Undergraduate Mentor",
@@ -190,7 +190,7 @@ export const experiences: Experience[] = [
     location: "Chennai, India",
     type: "education",
     summary:
-      "Undergraduate engineering foundation that built the technical base for later work across software engineering, enterprise platforms, and product execution.",
+      "Undergraduate engineering foundation that built the technical base for later work across software engineering, enterprise platforms, and product execution",
     highlights: [
       "Student Recruitment Lead",
       "Residential Community Secretary",

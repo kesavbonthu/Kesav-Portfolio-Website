@@ -24,8 +24,6 @@ export default function ContactCTA() {
           </a>
           <a
             href={profile.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
             className="flex items-center gap-2 rounded-xl border border-slate-600 bg-slate-800 px-7 py-3.5 text-base font-semibold text-white hover:bg-slate-700 transition-colors"
           >
             <ExternalLink className="h-5 w-5" />

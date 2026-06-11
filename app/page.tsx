@@ -1,4 +1,3 @@
-import Link from "next/link";
 import HeroSection from "@/components/home/HeroSection";
 import ExperienceCard from "@/components/experience/ExperienceCard";
 import ProjectCard from "@/components/projects/ProjectCard";
@@ -25,36 +24,36 @@ const whatIBring = [
   {
     title: "Product Thinking",
     body:
-      "I define user problems, translate them into product requirements, prioritize roadmaps, and measure success through adoption, efficiency, and business impact.",
+      "I define user problems, translate them into product requirements, prioritize roadmaps, and measure success through adoption, efficiency, and business impact",
   },
   {
     title: "Program Execution",
     body:
-      "I manage cross-functional delivery across engineering, QA, business, and leadership teams by aligning stakeholders, reducing ambiguity, and driving launches forward.",
+      "I manage cross-functional delivery across engineering, QA, business, and leadership teams by aligning stakeholders, reducing ambiguity, and driving launches forward",
   },
   {
     title: "Technical Depth",
     body:
-      "With 6+ years in financial services engineering and technical product work, I can work closely with teams on APIs, automation, dashboards, cloud modernization, and system tradeoffs.",
+      "With 6+ years in financial services engineering and technical product work, I can work closely with teams on APIs, automation, dashboards, cloud modernization, and system tradeoffs",
   },
 ];
 
 const targetRoles = [
   {
     title: "Product Manager",
-    body: "Best fit for AI products, workflow tools, fintech platforms, data products, and enterprise SaaS.",
+    body: "Best fit for AI products, workflow tools, fintech platforms, data products, and enterprise SaaS",
   },
   {
     title: "Technical Product Manager",
-    body: "Best fit for platform products, internal tooling, automation, APIs, and infrastructure-adjacent workflows.",
+    body: "Best fit for platform products, internal tooling, automation, APIs, and infrastructure-adjacent workflows",
   },
   {
     title: "Technical Program Manager",
-    body: "Best fit for cross-functional execution, release management, process standardization, and developer productivity.",
+    body: "Best fit for cross-functional execution, release management, process standardization, and developer productivity",
   },
   {
     title: "Program Manager",
-    body: "Best fit for operational improvement, stakeholder coordination, initiative tracking, workflow transformation, and scalable execution.",
+    body: "Best fit for operational improvement, stakeholder coordination, initiative tracking, workflow transformation, and scalable execution",
   },
 ];
 
@@ -89,7 +88,7 @@ export default function Home() {
             <div>
               <p className="section-eyebrow">01 / Positioning</p>
               <h2 className="section-heading mt-4">
-                Product and Program Manager with engineering depth, AI experience, and a track record of measurable impact.
+                Product and Program Manager with engineering depth, AI experience, and a track record of measurable impact
               </h2>
               <p className="section-copy mt-6 max-w-3xl text-lg">
                 {profile.summary}
@@ -98,13 +97,13 @@ export default function Home() {
                 <p>
                   I combine product strategy, technical program execution, and hands-on engineering
                   depth. My experience spans software engineering and technical product roles at
-                  Citi, AI product management at EndoMD Health, and MBA consulting work at UW
-                  Foster across enterprise process design and payments strategy.
+                  Citi, AI product management at EndoMD Health, and MBA consulting work at UW Foster
+                  across enterprise process design and payments strategy
                 </p>
                 <p>
                   I bring a blend of product thinking, program execution, and technical fluency to
                   teams building data-driven products, leading complex cross-functional initiatives,
-                  and turning technical complexity into business outcomes.
+                  and turning technical complexity into business outcomes
                 </p>
               </div>
             </div>
@@ -122,8 +121,8 @@ export default function Home() {
                 <p className="mono-label text-[color:var(--portfolio-muted)]">Core Differentiator</p>
                 <p className="mt-3 text-lg leading-relaxed text-[color:var(--portfolio-deep)]">
                   Equally strong in product strategy and program execution, with the technical
-                  fluency to work credibly across engineering, operations, analytics, and
-                  executive stakeholders.
+                  fluency to work credibly across engineering, operations, analytics, and executive
+                  stakeholders
                 </p>
               </div>
             </div>
@@ -137,12 +136,12 @@ export default function Home() {
             <div>
               <p className="section-eyebrow">02 / Featured Case Studies</p>
               <h2 className="section-heading mt-4">
-                Product, program, AI, financial services, and enterprise execution in one portfolio.
+                Product, program, AI, financial services, and enterprise execution in one portfolio
               </h2>
             </div>
             <p className="section-copy max-w-2xl">
               These are the strongest case studies for demonstrating AI product management,
-              technical product ownership, enterprise delivery, and operating leverage.
+              technical product ownership, enterprise delivery, and operating leverage
             </p>
           </div>
 
@@ -159,29 +158,21 @@ export default function Home() {
           <div className="mb-12">
             <p className="section-eyebrow">03 / AI Projects</p>
             <h2 className="section-heading mt-4">
-              Personal AI and agentic workflow work beyond core operating roles.
+              Personal AI and agentic workflow work beyond core operating roles
             </h2>
             <p className="section-copy mt-4 max-w-3xl">
               These projects demonstrate practical AI product experience across LLM-enabled workflows,
               prompt engineering, recommendation systems, prioritization logic, and workflow automation,
-              with a focus on translating emerging AI capabilities into usable product solutions.
+              with a focus on translating emerging AI capabilities into usable product solutions
             </p>
           </div>
 
           <div className="grid gap-6 lg:grid-cols-2">
             {aiProjects.map((project) => (
               <div key={project.slug} className="paper-card rounded-[2px] p-6">
-                <div className="flex flex-wrap items-start justify-between gap-4">
-                  <div>
-                    <p className="mono-label text-[color:var(--portfolio-accent)]">{project.subtitle}</p>
-                    <h3 className="mt-2 text-3xl font-medium text-[color:var(--portfolio-ink)]">{project.title}</h3>
-                  </div>
-                  <Link
-                    href={`/projects/${project.slug}`}
-                    className="mono-label text-[color:var(--portfolio-accent)] hover:text-[color:var(--portfolio-highlight)]"
-                  >
-                    Read Case Study
-                  </Link>
+                <div>
+                  <p className="mono-label text-[color:var(--portfolio-accent)]">{project.subtitle}</p>
+                  <h3 className="mt-2 text-3xl font-medium text-[color:var(--portfolio-ink)]">{project.title}</h3>
                 </div>
                 <p className="mt-4 text-sm leading-relaxed text-[color:var(--portfolio-muted)]">
                   {project.summary}
@@ -207,11 +198,11 @@ export default function Home() {
           <div className="mb-12">
             <p className="section-eyebrow">04 / Consulting Work</p>
             <h2 className="section-heading mt-4">
-              MBA strategy work across enterprise workflow design and payments growth.
+              MBA strategy work across enterprise workflow design and payments growth
             </h2>
             <p className="section-copy mt-4 max-w-3xl">
               These projects show business analysis, executive communication, market sizing, process design,
-              and stakeholder alignment in settings adjacent to product and program leadership.
+              and stakeholder alignment in settings adjacent to product and program leadership
             </p>
           </div>
 
@@ -296,11 +287,11 @@ export default function Home() {
           <div className="mb-12">
             <p className="section-eyebrow">06 / Skills by Role</p>
             <h2 className="section-heading mt-4">
-              Skills grouped by the types of work I do best.
+              Skills grouped by the types of work I do best
             </h2>
             <p className="section-copy mt-4 max-w-3xl">
               Rather than one long skills paragraph, these categories map directly to Product Manager,
-              Technical Product Manager, Technical Program Manager, and AI Product Manager roles.
+              Technical Product Manager, Technical Program Manager, and AI Product Manager roles
             </p>
           </div>
 
@@ -317,7 +308,7 @@ export default function Home() {
           <div className="mb-12">
             <p className="section-eyebrow">07 / Roles I&apos;m Targeting</p>
             <h2 className="section-heading mt-4">
-              Clear fit for product, technical product, technical program, and program roles.
+              Clear fit for product, technical product, technical program, and program roles
             </h2>
           </div>
 
@@ -338,11 +329,11 @@ export default function Home() {
             <div>
               <p className="section-eyebrow">08 / Let&apos;s Connect</p>
               <h2 className="section-heading mt-4">
-                Open to conversations around product, program, AI, and enterprise platform work.
+                Open to conversations around product, program, AI, and enterprise platform work
               </h2>
               <p className="section-copy mt-5 max-w-2xl text-lg">
                 I&apos;m currently exploring opportunities where I can combine product thinking,
-                program execution, technical depth, and measurable business impact.
+                program execution, technical depth, and measurable business impact
               </p>
             </div>
 
@@ -364,8 +355,6 @@ export default function Home() {
 
               <a
                 href={profile.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
                 className="paper-card group rounded-[2px] p-5 transition-colors hover:border-[color:var(--portfolio-accent)]"
               >
                 <div className="mb-3 flex items-center gap-3">
@@ -381,8 +370,6 @@ export default function Home() {
 
               <a
                 href={profile.github}
-                target="_blank"
-                rel="noopener noreferrer"
                 className="paper-card group rounded-[2px] p-5 transition-colors hover:border-[color:var(--portfolio-accent)]"
               >
                 <div className="mb-3 flex items-center gap-3">

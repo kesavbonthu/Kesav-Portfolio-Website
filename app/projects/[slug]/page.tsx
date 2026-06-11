@@ -155,7 +155,7 @@ export default async function ProjectDetailPage({ params }: Props) {
         <div className="mt-12 rounded-xl border border-slate-700 bg-slate-800/40 p-6 text-center">
           <p className="text-white font-medium">Interested in this kind of work?</p>
           <p className="mt-2 text-slate-400 text-sm">
-            I enjoy building product, program, and AI workflow solutions across complex operating environments. Let&apos;s connect.
+            I enjoy building product, program, and AI workflow solutions across complex operating environments. Let&apos;s connect
           </p>
           <a
             href={`mailto:${profile.email}`}

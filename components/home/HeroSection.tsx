@@ -1,7 +1,6 @@
 "use client";
 
-import Link from "next/link";
-import { ArrowRight, ExternalLink, MapPin } from "lucide-react";
+import { ExternalLink, MapPin } from "lucide-react";
 import { motion } from "framer-motion";
 import { profile } from "@/data/profile";
 
@@ -25,8 +24,8 @@ export default function HeroSection() {
             {profile.location}
           </p>
 
-          <h1 className="max-w-5xl text-5xl font-light tracking-tight text-[color:var(--portfolio-ink)] sm:text-6xl lg:text-7xl xl:text-[5.5rem]">
-            Product and Program Manager building AI, fintech, and enterprise workflow solutions.
+          <h1 className="max-w-4xl text-4xl font-light tracking-tight text-[color:var(--portfolio-ink)] sm:text-5xl lg:text-6xl xl:text-[4.75rem]">
+            Product and Program Manager building AI, fintech, and enterprise workflow solutions
           </h1>
 
           <p className="mt-5 text-xl font-medium text-[color:var(--portfolio-deep)] sm:text-2xl lg:text-[1.9rem]">
@@ -36,8 +35,8 @@ export default function HeroSection() {
           <p className="mt-7 max-w-3xl text-lg leading-relaxed text-[color:var(--portfolio-muted)] sm:text-xl">
             Recent MBA grad at UW Foster with 6+ years of experience across product management,
             technical program execution, and software engineering. I specialize in building
-            data-driven products, managing complex cross-functional initiatives, and turning
-            technical complexity into measurable business outcomes.
+            data-driven products, managing complex cross-functional initiatives, and turning technical
+            complexity into measurable business outcomes
           </p>
 
           {/* Credential badges */}
@@ -54,18 +53,9 @@ export default function HeroSection() {
 
           {/* CTAs */}
           <div className="mt-10 flex flex-wrap gap-4">
-            <Link
-              href="#projects"
-              className="mono-label flex items-center gap-2 rounded-sm bg-[color:var(--portfolio-accent)] px-7 py-3.5 text-white shadow-lg transition-colors hover:bg-[color:var(--portfolio-highlight)]"
-            >
-              View Case Studies
-              <ArrowRight className="h-5 w-5" />
-            </Link>
             <a
               href={profile.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mono-label flex items-center gap-2 rounded-sm border border-transparent px-7 py-3.5 text-[color:var(--portfolio-accent)] transition-colors hover:text-[color:var(--portfolio-highlight)]"
+              className="mono-label flex items-center gap-2 rounded-sm border border-[color:var(--portfolio-border)] bg-[rgba(255,253,249,0.72)] px-7 py-3.5 text-[color:var(--portfolio-ink)] transition-colors hover:border-[color:var(--portfolio-accent)] hover:text-[color:var(--portfolio-accent)]"
             >
               <ExternalLink className="h-5 w-5" />
               Connect on LinkedIn
@@ -90,25 +80,25 @@ export default function HeroSection() {
             <div className="ink-panel p-8 lg:p-10">
               <p className="mono-label text-[rgba(248,250,252,0.68)]">Current Focus</p>
               <h2 className="mt-4 text-4xl font-light text-white sm:text-[2.4rem]">
-                Building personal productivity applications that turn complex workflows into focused systems with clear insights.
+                Building personal productivity applications that turn complex workflows into focused systems with clear insights
               </h2>
               <div className="mt-8 space-y-6">
                 <div className="border-l border-white/15 pl-5">
                   <p className="text-3xl font-semibold text-white">JobLens AI</p>
                   <p className="mono-label mt-2 text-[rgba(248,250,252,0.56)]">
-                    An AI job search workspace for match scoring, resume gap analysis, and sharper application prioritization.
+                    An AI job search workspace for match scoring, resume gap analysis, and sharper application prioritization
                   </p>
                 </div>
                 <div className="border-l border-white/15 pl-5">
                   <p className="text-3xl font-semibold text-white">AI Inbox Task List</p>
                   <p className="mono-label mt-2 text-[rgba(248,250,252,0.56)]">
-                    A personal productivity workflow that converts email into structured tasks, priorities, and follow-up actions.
+                    A personal productivity workflow that converts email into structured tasks, priorities, and follow-up actions
                   </p>
                 </div>
                 <div className="border-l border-white/15 pl-5">
                   <p className="text-3xl font-semibold text-white">Why This Work</p>
                   <p className="mono-label mt-2 text-[rgba(248,250,252,0.56)]">
-                    I use side projects to explore product ideas hands-on, validate workflow pain points, and stay close to the tooling shaping modern PM work.
+                    I use side projects to explore product ideas hands-on, validate workflow pain points, and stay close to the tooling shaping modern PM work
                   </p>
                 </div>
               </div>

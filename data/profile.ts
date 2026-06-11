@@ -6,7 +6,7 @@ export const profile = {
   linkedin: "https://www.linkedin.com/in/kesav-bonthu/",
   github: "https://github.com/kesavbonthu",
   summary:
-    "Technical Product Manager and AI product leader with 6+ years spanning software engineering, enterprise platforms, healthcare AI, and product strategy. I translate ambiguous operational problems into shipped products, measurable adoption, and executive-ready roadmaps.",
+    "Technical Product Manager and AI product leader with 6+ years spanning software engineering, enterprise platforms, healthcare AI, and product strategy. I translate ambiguous operational problems into shipped products, measurable adoption, and executive-ready roadmaps",
   interests: ["Running", "Cooking", "Hiking", "Photography"],
   credentials: [
     "MBA Candidate, UW Foster",
