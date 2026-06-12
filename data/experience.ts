@@ -140,7 +140,7 @@ export const experiences: Experience[] = [
   },
   {
     company: "Amazon Business",
-    role: "MBA Consultant, Payment Products",
+    role: "MBA Consultant",
     startDate: "Jan 2026",
     endDate: "Mar 2026",
     location: "Seattle, WA",
