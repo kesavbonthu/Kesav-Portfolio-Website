@@ -76,9 +76,6 @@ export default function HeroSection() {
                 className="h-full w-full object-cover object-[center_20%]"
               />
             </div>
-            <div className="px-2 pb-1 pt-4 sm:px-1">
-              <p className="mono-label text-[color:var(--portfolio-muted)]">Seattle, WA</p>
-            </div>
           </div>
         </motion.div>
       </div>
