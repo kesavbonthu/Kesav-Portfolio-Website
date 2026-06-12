@@ -1,4 +1,5 @@
 import HeroSection from "@/components/home/HeroSection";
+import { ScrollRevealGroup, ScrollRevealItem } from "@/components/animation/ScrollReveal";
 import ExperienceCard from "@/components/experience/ExperienceCard";
 import ProjectCard from "@/components/projects/ProjectCard";
 import SkillBadgeCloud from "@/components/skills/SkillBadgeCloud";
@@ -84,304 +85,362 @@ export default function Home() {
 
       <section id="about" className="border-t border-[color:var(--portfolio-border)] bg-transparent py-20">
         <div className="mx-auto max-w-screen-2xl px-6 sm:px-10 lg:px-16">
-          <div className="grid gap-8 lg:grid-cols-[minmax(0,1.15fr)_minmax(320px,0.85fr)] lg:gap-12">
-            <div>
-              <p className="section-eyebrow">01 / Positioning</p>
-              <h2 className="section-heading mt-4">
-                Product and Program Manager with engineering depth, AI experience, and a track record of measurable impact
-              </h2>
-              <div className="section-copy mt-6 max-w-3xl space-y-5 text-base sm:text-lg">
-                <p>
-                  {profile.summary}
-                </p>
-                <p>
-                  I combine product strategy, technical program execution, and hands-on engineering
-                  depth. My experience spans software engineering and technical product roles at
-                  Citi, AI product management at EndoMD Health, and MBA consulting work at UW Foster
-                  across enterprise process design and payments strategy
-                </p>
-                <p>
-                  I bring a blend of product thinking, program execution, and technical fluency to
-                  teams building data-driven products, leading complex cross-functional initiatives,
-                  and turning technical complexity into business outcomes
-                </p>
-              </div>
-            </div>
-
-            <div className="paper-card rounded-[2px] p-6 sm:p-7">
-              <p className="mono-label text-[color:var(--portfolio-muted)]">What I Bring</p>
-              <div className="mt-5 space-y-5">
-                {whatIBring.map((item) => (
-                  <div key={item.title} className="border-b border-[color:var(--portfolio-border)]/70 pb-5 last:border-b-0 last:pb-0">
-                    <h3 className="text-xl font-medium text-[color:var(--portfolio-ink)]">{item.title}</h3>
-                    <p className="mt-2 text-sm leading-relaxed text-[color:var(--portfolio-muted)] sm:text-[0.96rem]">
-                      {item.body}
-                    </p>
-                  </div>
-                ))}
-                <div className="rounded-[2px] bg-[color:var(--portfolio-cream)]/45 p-4">
-                  <p className="mono-label text-[color:var(--portfolio-muted)]">Core Differentiator</p>
-                  <p className="mt-2 text-base leading-relaxed text-[color:var(--portfolio-deep)]">
-                    Equally strong in product strategy and program execution, with the technical
-                    fluency to work credibly across engineering, operations, analytics, and executive
-                    stakeholders
+          <ScrollRevealGroup className="grid gap-8 lg:grid-cols-[minmax(0,1.15fr)_minmax(320px,0.85fr)] lg:gap-12">
+            <ScrollRevealItem>
+              <div>
+                <p className="section-eyebrow">01 / Positioning</p>
+                <h2 className="section-heading mt-4">
+                  Product and Program Manager with engineering depth, AI experience, and a track record of measurable impact
+                </h2>
+                <div className="section-copy mt-6 max-w-3xl space-y-5 text-base sm:text-lg">
+                  <p>
+                    {profile.summary}
+                  </p>
+                  <p>
+                    I combine product strategy, technical program execution, and hands-on engineering
+                    depth. My experience spans software engineering and technical product roles at
+                    Citi, AI product management at EndoMD Health, and MBA consulting work at UW Foster
+                    across enterprise process design and payments strategy
+                  </p>
+                  <p>
+                    I bring a blend of product thinking, program execution, and technical fluency to
+                    teams building data-driven products, leading complex cross-functional initiatives,
+                    and turning technical complexity into business outcomes
                   </p>
                 </div>
               </div>
-            </div>
-          </div>
+            </ScrollRevealItem>
+
+            <ScrollRevealItem>
+              <div className="paper-card rounded-[2px] p-6 sm:p-7">
+                <p className="mono-label text-[color:var(--portfolio-muted)]">What I Bring</p>
+                <div className="mt-5 space-y-5">
+                  {whatIBring.map((item) => (
+                    <div key={item.title} className="border-b border-[color:var(--portfolio-border)]/70 pb-5 last:border-b-0 last:pb-0">
+                      <h3 className="text-xl font-medium text-[color:var(--portfolio-ink)]">{item.title}</h3>
+                      <p className="mt-2 text-sm leading-relaxed text-[color:var(--portfolio-muted)] sm:text-[0.96rem]">
+                        {item.body}
+                      </p>
+                    </div>
+                  ))}
+                  <div className="rounded-[2px] bg-[color:var(--portfolio-cream)]/45 p-4">
+                    <p className="mono-label text-[color:var(--portfolio-muted)]">Core Differentiator</p>
+                    <p className="mt-2 text-base leading-relaxed text-[color:var(--portfolio-deep)]">
+                      Equally strong in product strategy and program execution, with the technical
+                      fluency to work credibly across engineering, operations, analytics, and executive
+                      stakeholders
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </ScrollRevealItem>
+          </ScrollRevealGroup>
         </div>
       </section>
 
       <section id="projects" className="border-t border-[color:var(--portfolio-border)] bg-transparent py-20">
         <div className="mx-auto max-w-screen-2xl px-6 sm:px-10 lg:px-16">
-          <div className="mb-12">
-            <p className="section-eyebrow">02 / Featured Case Studies</p>
-            <h2 className="section-heading mt-4">
-              Product, program, AI, financial services, and enterprise execution in one portfolio
-            </h2>
-          </div>
-
-          <div className="stagger-sample grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {featuredCaseStudies.map((project) => (
-              <div key={project.slug} className="stagger-item">
-                <ProjectCard project={project} />
+          <ScrollRevealGroup>
+            <ScrollRevealItem className="mb-12">
+              <div>
+                <p className="section-eyebrow">02 / Featured Case Studies</p>
+                <h2 className="section-heading mt-4">
+                  Product, program, AI, financial services, and enterprise execution in one portfolio
+                </h2>
               </div>
-            ))}
-          </div>
+            </ScrollRevealItem>
+
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {featuredCaseStudies.map((project) => (
+                <ScrollRevealItem key={project.slug}>
+                  <ProjectCard project={project} />
+                </ScrollRevealItem>
+              ))}
+            </div>
+          </ScrollRevealGroup>
         </div>
       </section>
 
       <section id="ai-projects" className="border-t border-[color:var(--portfolio-border)] bg-[rgba(255,253,249,0.45)] py-20">
         <div className="mx-auto max-w-screen-2xl px-6 sm:px-10 lg:px-16">
-          <div className="mb-12">
-            <p className="section-eyebrow">03 / AI Projects</p>
-            <h2 className="section-heading mt-4">
-              Personal AI and agentic workflow work beyond core operating roles
-            </h2>
-          </div>
-
-          <div className="grid gap-6 lg:grid-cols-2">
-            {aiProjects.map((project) => (
-              <div key={project.slug} className="paper-card rounded-[2px] p-6">
-                <div>
-                  <p className="mono-label text-[color:var(--portfolio-accent)]">{project.subtitle}</p>
-                  <h3 className="mt-2 text-3xl font-medium text-[color:var(--portfolio-ink)]">{project.title}</h3>
-                </div>
-                <p className="mt-4 text-sm leading-relaxed text-[color:var(--portfolio-muted)]">
-                  {project.summary}
-                </p>
-                <div className="mt-5 flex flex-wrap gap-2">
-                  {project.skills.slice(0, 6).map((skill) => (
-                    <span
-                      key={skill}
-                      className="mono-label rounded-full border border-[color:var(--portfolio-border)] bg-[color:var(--portfolio-cream)] px-3 py-1 text-[color:var(--portfolio-deep)]"
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
+          <ScrollRevealGroup>
+            <ScrollRevealItem className="mb-12">
+              <div>
+                <p className="section-eyebrow">03 / AI Projects</p>
+                <h2 className="section-heading mt-4">
+                  Personal AI and agentic workflow work beyond core operating roles
+                </h2>
               </div>
-            ))}
-          </div>
+            </ScrollRevealItem>
+
+            <div className="grid gap-6 lg:grid-cols-2">
+              {aiProjects.map((project) => (
+                <ScrollRevealItem key={project.slug}>
+                  <div className="paper-card rounded-[2px] p-6">
+                    <div>
+                      <p className="mono-label text-[color:var(--portfolio-accent)]">{project.subtitle}</p>
+                      <h3 className="mt-2 text-3xl font-medium text-[color:var(--portfolio-ink)]">{project.title}</h3>
+                    </div>
+                    <p className="mt-4 text-sm leading-relaxed text-[color:var(--portfolio-muted)]">
+                      {project.summary}
+                    </p>
+                    <div className="mt-5 flex flex-wrap gap-2">
+                      {project.skills.slice(0, 6).map((skill) => (
+                        <span
+                          key={skill}
+                          className="mono-label rounded-full border border-[color:var(--portfolio-border)] bg-[color:var(--portfolio-cream)] px-3 py-1 text-[color:var(--portfolio-deep)]"
+                        >
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </ScrollRevealItem>
+              ))}
+            </div>
+          </ScrollRevealGroup>
         </div>
       </section>
 
       <section id="consulting" className="border-t border-[color:var(--portfolio-border)] bg-transparent py-20">
         <div className="mx-auto max-w-screen-2xl px-6 sm:px-10 lg:px-16">
-          <div className="mb-12">
-            <p className="section-eyebrow">04 / Consulting Work</p>
-            <h2 className="section-heading mt-4">
-              MBA strategy work across enterprise workflow design and payments growth
-            </h2>
-          </div>
-
-          <div className="grid gap-6 lg:grid-cols-2">
-            {consultingWork.map((project) => (
-              <div key={project.slug} className="paper-card rounded-[2px] p-6">
-                <p className="mono-label text-[color:var(--portfolio-accent)]">{project.client}</p>
-                <h3 className="mt-2 text-3xl font-medium text-[color:var(--portfolio-ink)]">{project.project}</h3>
-                <p className="mt-4 text-sm leading-relaxed text-[color:var(--portfolio-muted)]">
-                  {project.challenge}
-                </p>
-                <div className="mt-5 grid gap-4 sm:grid-cols-2">
-                  <div>
-                    <p className="mono-label text-[color:var(--portfolio-muted)]">Approach</p>
-                    <ul className="mt-3 space-y-2">
-                      {project.approach.slice(0, 3).map((item) => (
-                        <li key={item} className="text-sm leading-relaxed text-[color:var(--portfolio-muted)]">
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div>
-                    <p className="mono-label text-[color:var(--portfolio-muted)]">Impact</p>
-                    <ul className="mt-3 space-y-2">
-                      {project.impact.map((item) => (
-                        <li key={item} className="text-sm leading-relaxed text-[color:var(--portfolio-muted)]">
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
+          <ScrollRevealGroup>
+            <ScrollRevealItem className="mb-12">
+              <div>
+                <p className="section-eyebrow">04 / Consulting Work</p>
+                <h2 className="section-heading mt-4">
+                  MBA strategy work across enterprise workflow design and payments growth
+                </h2>
               </div>
-            ))}
-          </div>
+            </ScrollRevealItem>
+
+            <div className="grid gap-6 lg:grid-cols-2">
+              {consultingWork.map((project) => (
+                <ScrollRevealItem key={project.slug}>
+                  <div className="paper-card rounded-[2px] p-6">
+                    <p className="mono-label text-[color:var(--portfolio-accent)]">{project.client}</p>
+                    <h3 className="mt-2 text-3xl font-medium text-[color:var(--portfolio-ink)]">{project.project}</h3>
+                    <p className="mt-4 text-sm leading-relaxed text-[color:var(--portfolio-muted)]">
+                      {project.challenge}
+                    </p>
+                    <div className="mt-5 grid gap-4 sm:grid-cols-2">
+                      <div>
+                        <p className="mono-label text-[color:var(--portfolio-muted)]">Approach</p>
+                        <ul className="mt-3 space-y-2">
+                          {project.approach.slice(0, 3).map((item) => (
+                            <li key={item} className="text-sm leading-relaxed text-[color:var(--portfolio-muted)]">
+                              {item}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      <div>
+                        <p className="mono-label text-[color:var(--portfolio-muted)]">Impact</p>
+                        <ul className="mt-3 space-y-2">
+                          {project.impact.map((item) => (
+                            <li key={item} className="text-sm leading-relaxed text-[color:var(--portfolio-muted)]">
+                              {item}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </ScrollRevealItem>
+              ))}
+            </div>
+          </ScrollRevealGroup>
         </div>
       </section>
 
       <section id="experience" className="border-t border-[color:var(--portfolio-border)] bg-[rgba(255,253,249,0.45)] py-20">
         <div className="mx-auto max-w-screen-2xl px-6 sm:px-10 lg:px-16">
-          <div className="mb-12">
-            <p className="section-eyebrow">05 / Experience</p>
-            <h2 className="section-heading mt-4">
-              Career Experience
-            </h2>
-          </div>
-
-          <div className="space-y-14">
-            <section>
-              <h3 className="mono-label mb-6 text-[color:var(--portfolio-muted)]">Industry Roles</h3>
+          <ScrollRevealGroup>
+            <ScrollRevealItem className="mb-12">
               <div>
-                {fullTime.map((exp) => (
-                  <ExperienceCard key={`${exp.company}-${exp.role}`} exp={exp} />
-                ))}
+                <p className="section-eyebrow">05 / Experience</p>
+                <h2 className="section-heading mt-4">
+                  Career Experience
+                </h2>
               </div>
-            </section>
+            </ScrollRevealItem>
 
-            <section>
-              <h3 className="mono-label mb-6 text-[color:var(--portfolio-muted)]">MBA Consulting Projects</h3>
-              <div>
-                {consulting.map((exp) => (
-                  <ExperienceCard key={`${exp.company}-${exp.role}`} exp={exp} />
-                ))}
-              </div>
-            </section>
+            <div className="space-y-14">
+              <section>
+                <ScrollRevealItem className="mb-6">
+                  <h3 className="mono-label text-[color:var(--portfolio-muted)]">Industry Roles</h3>
+                </ScrollRevealItem>
+                <div>
+                  {fullTime.map((exp) => (
+                    <ScrollRevealItem key={`${exp.company}-${exp.role}`}>
+                      <ExperienceCard exp={exp} />
+                    </ScrollRevealItem>
+                  ))}
+                </div>
+              </section>
 
-            <section>
-              <h3 className="mono-label mb-6 text-[color:var(--portfolio-muted)]">Education</h3>
-              <div>
-                {education.map((exp) => (
-                  <ExperienceCard key={`${exp.company}-${exp.role}`} exp={exp} />
-                ))}
-              </div>
-            </section>
-          </div>
+              <section>
+                <ScrollRevealItem className="mb-6">
+                  <h3 className="mono-label text-[color:var(--portfolio-muted)]">MBA Consulting Projects</h3>
+                </ScrollRevealItem>
+                <div>
+                  {consulting.map((exp) => (
+                    <ScrollRevealItem key={`${exp.company}-${exp.role}`}>
+                      <ExperienceCard exp={exp} />
+                    </ScrollRevealItem>
+                  ))}
+                </div>
+              </section>
+
+              <section>
+                <ScrollRevealItem className="mb-6">
+                  <h3 className="mono-label text-[color:var(--portfolio-muted)]">Education</h3>
+                </ScrollRevealItem>
+                <div>
+                  {education.map((exp) => (
+                    <ScrollRevealItem key={`${exp.company}-${exp.role}`}>
+                      <ExperienceCard exp={exp} />
+                    </ScrollRevealItem>
+                  ))}
+                </div>
+              </section>
+            </div>
+          </ScrollRevealGroup>
         </div>
       </section>
 
       <section id="skills" className="border-t border-[color:var(--portfolio-border)] bg-transparent py-20">
         <div className="mx-auto max-w-screen-2xl px-6 sm:px-10 lg:px-16">
-          <div className="mb-12">
-            <p className="section-eyebrow">06 / Skills by Role</p>
-            <h2 className="section-heading mt-4">
-              Skills
-            </h2>
-          </div>
+          <ScrollRevealGroup>
+            <ScrollRevealItem className="mb-12">
+              <div>
+                <p className="section-eyebrow">06 / Skills by Role</p>
+                <h2 className="section-heading mt-4">
+                  Skills
+                </h2>
+              </div>
+            </ScrollRevealItem>
 
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {filteredSkillCategories.map((category) => (
-              <SkillBadgeCloud key={category.category} category={category} />
-            ))}
-          </div>
+            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+              {filteredSkillCategories.map((category) => (
+                <ScrollRevealItem key={category.category}>
+                  <SkillBadgeCloud category={category} />
+                </ScrollRevealItem>
+              ))}
+            </div>
+          </ScrollRevealGroup>
         </div>
       </section>
 
       <section id="roles" className="border-t border-[color:var(--portfolio-border)] bg-[rgba(255,253,249,0.45)] py-20">
         <div className="mx-auto max-w-screen-2xl px-6 sm:px-10 lg:px-16">
-          <div className="mb-12">
-            <p className="section-eyebrow">07 / Roles I&apos;m Targeting</p>
-            <h2 className="section-heading mt-4">
-              Interested in product, technical product, technical program and program manager roles
-            </h2>
-          </div>
-
-          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-            {targetRoles.map((role) => (
-              <div key={role.title} className="paper-card rounded-[2px] p-6">
-                <h3 className="text-2xl font-medium text-[color:var(--portfolio-ink)]">{role.title}</h3>
-                <p className="mt-4 text-sm leading-relaxed text-[color:var(--portfolio-muted)]">{role.body}</p>
+          <ScrollRevealGroup>
+            <ScrollRevealItem className="mb-12">
+              <div>
+                <p className="section-eyebrow">07 / Roles I&apos;m Targeting</p>
+                <h2 className="section-heading mt-4">
+                  Interested in product, technical product, technical program and program manager roles
+                </h2>
               </div>
-            ))}
-          </div>
+            </ScrollRevealItem>
+
+            <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+              {targetRoles.map((role) => (
+                <ScrollRevealItem key={role.title}>
+                  <div className="paper-card rounded-[2px] p-6">
+                    <h3 className="text-2xl font-medium text-[color:var(--portfolio-ink)]">{role.title}</h3>
+                    <p className="mt-4 text-sm leading-relaxed text-[color:var(--portfolio-muted)]">{role.body}</p>
+                  </div>
+                </ScrollRevealItem>
+              ))}
+            </div>
+          </ScrollRevealGroup>
         </div>
       </section>
 
       <section id="contact" className="border-t border-[color:var(--portfolio-border)] bg-[rgba(255,253,249,0.45)] py-20">
         <div className="mx-auto max-w-screen-2xl px-6 sm:px-10 lg:px-16">
-          <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
-            <div>
-              <p className="section-eyebrow">08 / Let&apos;s Connect</p>
-              <h2 className="section-heading mt-4">
-                Open to conversations around product, program, AI, and enterprise platform work
-              </h2>
-            </div>
+          <ScrollRevealGroup className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+            <ScrollRevealItem>
+              <div>
+                <p className="section-eyebrow">08 / Let&apos;s Connect</p>
+                <h2 className="section-heading mt-4">
+                  Open to conversations around product, program, AI, and enterprise platform work
+                </h2>
+              </div>
+            </ScrollRevealItem>
 
             <div className="grid gap-5 sm:grid-cols-2">
-              <a
-                href={`mailto:${profile.email}`}
-                className="paper-card group rounded-[2px] p-5 transition-colors hover:border-[color:var(--portfolio-accent)]"
-              >
-                <div className="mb-3 flex items-center gap-3">
-                  <div className="rounded-sm bg-[color:var(--portfolio-accent-soft)] p-2">
-                    <Mail className="h-5 w-5 text-[color:var(--portfolio-accent)]" />
+              <ScrollRevealItem>
+                <a
+                  href={`mailto:${profile.email}`}
+                  className="paper-card group block rounded-[2px] p-5 transition-colors hover:border-[color:var(--portfolio-accent)]"
+                >
+                  <div className="mb-3 flex items-center gap-3">
+                    <div className="rounded-sm bg-[color:var(--portfolio-accent-soft)] p-2">
+                      <Mail className="h-5 w-5 text-[color:var(--portfolio-accent)]" />
+                    </div>
+                    <span className="font-medium text-[color:var(--portfolio-ink)]">Email Me</span>
                   </div>
-                  <span className="font-medium text-[color:var(--portfolio-ink)]">Email Me</span>
-                </div>
-                <p className="text-sm text-[color:var(--portfolio-muted)] transition-colors group-hover:text-[color:var(--portfolio-deep)]">
-                  {profile.email}
-                </p>
-              </a>
+                  <p className="text-sm text-[color:var(--portfolio-muted)] transition-colors group-hover:text-[color:var(--portfolio-deep)]">
+                    {profile.email}
+                  </p>
+                </a>
+              </ScrollRevealItem>
 
-              <a
-                href={profile.linkedin}
-                className="paper-card group rounded-[2px] p-5 transition-colors hover:border-[color:var(--portfolio-accent)]"
-              >
-                <div className="mb-3 flex items-center gap-3">
-                  <div className="rounded-sm bg-[color:var(--portfolio-accent-soft)] p-2">
-                    <ExternalLink className="h-5 w-5 text-[color:var(--portfolio-accent)]" />
+              <ScrollRevealItem>
+                <a
+                  href={profile.linkedin}
+                  className="paper-card group block rounded-[2px] p-5 transition-colors hover:border-[color:var(--portfolio-accent)]"
+                >
+                  <div className="mb-3 flex items-center gap-3">
+                    <div className="rounded-sm bg-[color:var(--portfolio-accent-soft)] p-2">
+                      <ExternalLink className="h-5 w-5 text-[color:var(--portfolio-accent)]" />
+                    </div>
+                    <span className="font-medium text-[color:var(--portfolio-ink)]">LinkedIn</span>
                   </div>
-                  <span className="font-medium text-[color:var(--portfolio-ink)]">LinkedIn</span>
-                </div>
-                <p className="text-sm text-[color:var(--portfolio-muted)] transition-colors group-hover:text-[color:var(--portfolio-deep)]">
-                  linkedin.com/in/kesav-bonthu
-                </p>
-              </a>
+                  <p className="text-sm text-[color:var(--portfolio-muted)] transition-colors group-hover:text-[color:var(--portfolio-deep)]">
+                    linkedin.com/in/kesav-bonthu
+                  </p>
+                </a>
+              </ScrollRevealItem>
 
-              <a
-                href={profile.github}
-                className="paper-card group rounded-[2px] p-5 transition-colors hover:border-[color:var(--portfolio-accent)]"
-              >
-                <div className="mb-3 flex items-center gap-3">
-                  <div className="rounded-sm bg-[color:var(--portfolio-accent-soft)] p-2">
-                    <GitFork className="h-5 w-5 text-[color:var(--portfolio-accent)]" />
+              <ScrollRevealItem>
+                <a
+                  href={profile.github}
+                  className="paper-card group block rounded-[2px] p-5 transition-colors hover:border-[color:var(--portfolio-accent)]"
+                >
+                  <div className="mb-3 flex items-center gap-3">
+                    <div className="rounded-sm bg-[color:var(--portfolio-accent-soft)] p-2">
+                      <GitFork className="h-5 w-5 text-[color:var(--portfolio-accent)]" />
+                    </div>
+                    <span className="font-medium text-[color:var(--portfolio-ink)]">GitHub</span>
                   </div>
-                  <span className="font-medium text-[color:var(--portfolio-ink)]">GitHub</span>
-                </div>
-                <p className="text-sm text-[color:var(--portfolio-muted)] transition-colors group-hover:text-[color:var(--portfolio-deep)]">
-                  Personal and project repositories
-                </p>
-              </a>
+                  <p className="text-sm text-[color:var(--portfolio-muted)] transition-colors group-hover:text-[color:var(--portfolio-deep)]">
+                    Personal and project repositories
+                  </p>
+                </a>
+              </ScrollRevealItem>
 
-              <div className="paper-card rounded-[2px] p-5">
-                <div className="mb-3 flex items-center gap-3">
-                  <div className="rounded-sm bg-[color:var(--portfolio-accent-soft)] p-2">
-                    <MapPin className="h-5 w-5 text-[color:var(--portfolio-accent)]" />
+              <ScrollRevealItem>
+                <div className="paper-card rounded-[2px] p-5">
+                  <div className="mb-3 flex items-center gap-3">
+                    <div className="rounded-sm bg-[color:var(--portfolio-accent-soft)] p-2">
+                      <MapPin className="h-5 w-5 text-[color:var(--portfolio-accent)]" />
+                    </div>
+                    <span className="font-medium text-[color:var(--portfolio-ink)]">Location</span>
                   </div>
-                  <span className="font-medium text-[color:var(--portfolio-ink)]">Location</span>
+                  <p className="text-sm text-[color:var(--portfolio-muted)]">{profile.location}</p>
+                  <p className="mono-label mt-1 text-[color:var(--portfolio-muted)]">
+                    Open to on-site, hybrid, and remote roles
+                  </p>
+                  <p className="mono-label mt-1 text-[color:var(--portfolio-muted)]">
+                    Open to relocation within US
+                  </p>
                 </div>
-                <p className="text-sm text-[color:var(--portfolio-muted)]">{profile.location}</p>
-                <p className="mono-label mt-1 text-[color:var(--portfolio-muted)]">
-                  Open to on-site, hybrid, and remote roles
-                </p>
-                <p className="mono-label mt-1 text-[color:var(--portfolio-muted)]">
-                  Open to relocation within US
-                </p>
-              </div>
+              </ScrollRevealItem>
             </div>
-          </div>
+          </ScrollRevealGroup>
         </div>
       </section>
     </>
