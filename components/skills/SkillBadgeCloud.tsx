@@ -5,8 +5,6 @@ interface SkillBadgeCloudProps {
 }
 
 export default function SkillBadgeCloud({ category }: SkillBadgeCloudProps) {
-  const visibleSkills = category.skills.slice(0, 8);
-
   return (
     <div className="paper-card rounded-[2px] p-6 sm:p-7">
       <div className="mb-5 flex items-center gap-3">
@@ -14,10 +12,10 @@ export default function SkillBadgeCloud({ category }: SkillBadgeCloudProps) {
         <h3 className="text-xl font-medium text-[color:var(--portfolio-ink)]">{category.category}</h3>
       </div>
       <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-        {visibleSkills.map((skill) => (
+        {category.skills.map((skill) => (
           <div
             key={skill}
-            className="rounded-[2px] border border-[color:var(--portfolio-border)] bg-[color:var(--portfolio-cream)]/55 px-3 py-3 text-sm font-medium text-[color:var(--portfolio-deep)]"
+            className="rounded-[2px] border border-[color:var(--portfolio-border)] bg-[color:var(--portfolio-cream)]/35 px-3 py-3 text-sm font-medium text-[color:var(--portfolio-deep)]"
           >
             {skill}
           </div>
