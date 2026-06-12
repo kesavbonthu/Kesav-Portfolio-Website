@@ -45,11 +45,13 @@ export default function ExperienceCard({ exp }: ExperienceCardProps) {
           </div>
         </div>
 
-        <p className="mt-4 text-base leading-relaxed text-[color:var(--portfolio-muted)]">{exp.summary}</p>
+        {exp.type !== "education" && (
+          <p className="mt-4 text-base leading-relaxed text-[color:var(--portfolio-muted)]">{exp.summary}</p>
+        )}
 
         {exp.highlights.length > 0 && (
           exp.type === "education" ? (
-            <div className="mt-5 flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-[color:var(--portfolio-muted)]">
+            <div className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-[color:var(--portfolio-muted)]">
               {exp.highlights.map((h, i) => (
                 <div key={i} className="flex items-center gap-2">
                   <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[color:var(--portfolio-highlight)]" />
