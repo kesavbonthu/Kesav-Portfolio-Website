@@ -25,7 +25,7 @@ export default function HeroSection() {
           </p>
 
           <h1 className="max-w-4xl text-4xl font-light tracking-tight text-[color:var(--portfolio-ink)] sm:text-5xl lg:text-6xl xl:text-[4.75rem]">
-            Product and Program Manager building AI, fintech, and enterprise workflow solutions
+            Product and Program Manager building AI, financial services, and enterprise workflow solutions
           </h1>
 
           <p className="mt-4 text-lg font-medium text-[color:var(--portfolio-deep)] sm:text-xl lg:text-[1.7rem]">
