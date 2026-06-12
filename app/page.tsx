@@ -178,8 +178,7 @@ export default function Home() {
                 <ScrollRevealItem key={project.slug}>
                   <div className="paper-card rounded-[2px] p-6">
                     <div>
-                      <p className="mono-label text-[color:var(--portfolio-accent)]">{project.subtitle}</p>
-                      <h3 className="mt-2 text-3xl font-medium text-[color:var(--portfolio-ink)]">{project.title}</h3>
+                      <h3 className="text-3xl font-medium text-[color:var(--portfolio-ink)]">{project.title}</h3>
                     </div>
                     <p className="mt-4 text-sm leading-relaxed text-[color:var(--portfolio-muted)]">
                       {project.summary}
