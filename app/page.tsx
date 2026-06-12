@@ -84,16 +84,16 @@ export default function Home() {
 
       <section id="about" className="border-t border-[color:var(--portfolio-border)] bg-transparent py-20">
         <div className="mx-auto max-w-screen-2xl px-6 sm:px-10 lg:px-16">
-          <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
+          <div className="grid gap-8 lg:grid-cols-[minmax(0,1.15fr)_minmax(320px,0.85fr)] lg:gap-12">
             <div>
               <p className="section-eyebrow">01 / Positioning</p>
               <h2 className="section-heading mt-4">
                 Product and Program Manager with engineering depth, AI experience, and a track record of measurable impact
               </h2>
-              <p className="section-copy mt-6 max-w-3xl text-lg">
-                {profile.summary}
-              </p>
-              <div className="section-copy mt-8 space-y-4">
+              <div className="section-copy mt-6 max-w-3xl space-y-5 text-base sm:text-lg">
+                <p>
+                  {profile.summary}
+                </p>
                 <p>
                   I combine product strategy, technical program execution, and hands-on engineering
                   depth. My experience spans software engineering and technical product roles at
@@ -108,22 +108,25 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="grid gap-4 sm:grid-cols-2">
-              {whatIBring.map((item) => (
-                <div key={item.title} className="paper-card rounded-[2px] p-6">
-                  <h3 className="text-xl font-medium text-[color:var(--portfolio-ink)]">{item.title}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-[color:var(--portfolio-muted)]">
-                    {item.body}
+            <div className="paper-card rounded-[2px] p-6 sm:p-7">
+              <p className="mono-label text-[color:var(--portfolio-muted)]">What I Bring</p>
+              <div className="mt-5 space-y-5">
+                {whatIBring.map((item) => (
+                  <div key={item.title} className="border-b border-[color:var(--portfolio-border)]/70 pb-5 last:border-b-0 last:pb-0">
+                    <h3 className="text-xl font-medium text-[color:var(--portfolio-ink)]">{item.title}</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-[color:var(--portfolio-muted)] sm:text-[0.96rem]">
+                      {item.body}
+                    </p>
+                  </div>
+                ))}
+                <div className="rounded-[2px] bg-[color:var(--portfolio-cream)]/45 p-4">
+                  <p className="mono-label text-[color:var(--portfolio-muted)]">Core Differentiator</p>
+                  <p className="mt-2 text-base leading-relaxed text-[color:var(--portfolio-deep)]">
+                    Equally strong in product strategy and program execution, with the technical
+                    fluency to work credibly across engineering, operations, analytics, and executive
+                    stakeholders
                   </p>
                 </div>
-              ))}
-              <div className="paper-card rounded-[2px] p-6 sm:col-span-2">
-                <p className="mono-label text-[color:var(--portfolio-muted)]">Core Differentiator</p>
-                <p className="mt-3 text-lg leading-relaxed text-[color:var(--portfolio-deep)]">
-                  Equally strong in product strategy and program execution, with the technical
-                  fluency to work credibly across engineering, operations, analytics, and executive
-                  stakeholders
-                </p>
               </div>
             </div>
           </div>
