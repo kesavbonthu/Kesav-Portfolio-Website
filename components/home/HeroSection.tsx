@@ -28,10 +28,6 @@ export default function HeroSection() {
             Product and Program Manager building AI, financial services, and enterprise workflow solutions
           </h1>
 
-          <p className="mt-4 text-lg font-medium text-[color:var(--portfolio-deep)] sm:text-xl lg:text-[1.7rem]">
-            Kesav Bonthu
-          </p>
-
           <p className="mt-6 max-w-3xl text-base leading-relaxed text-[color:var(--portfolio-muted)] sm:text-lg lg:max-w-2xl">
             Recent MBA grad at UW Foster with 6+ years of experience across product management,
             technical program execution, and software engineering. I specialize in building
@@ -75,6 +71,11 @@ export default function HeroSection() {
                 alt="Portrait of Kesav Bonthu"
                 className="h-full w-full object-cover object-[center_20%]"
               />
+            </div>
+            <div className="px-2 pb-1 pt-4 sm:px-1">
+              <p className="text-lg font-medium text-[color:var(--portfolio-deep)] sm:text-xl">
+                Kesav Bonthu
+              </p>
             </div>
           </div>
         </motion.div>
