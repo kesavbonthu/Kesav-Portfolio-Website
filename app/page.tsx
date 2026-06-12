@@ -217,8 +217,7 @@ export default function Home() {
               {consultingWork.map((project) => (
                 <ScrollRevealItem key={project.slug}>
                   <div className="paper-card rounded-[2px] p-6">
-                    <p className="mono-label text-[color:var(--portfolio-accent)]">{project.client}</p>
-                    <h3 className="mt-2 text-3xl font-medium text-[color:var(--portfolio-ink)]">{project.project}</h3>
+                    <h3 className="text-3xl font-medium text-[color:var(--portfolio-ink)]">{project.project}</h3>
                     <p className="mt-4 text-sm leading-relaxed text-[color:var(--portfolio-muted)]">
                       {project.challenge}
                     </p>
