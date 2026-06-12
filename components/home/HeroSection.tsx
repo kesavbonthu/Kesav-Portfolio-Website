@@ -78,9 +78,6 @@ export default function HeroSection() {
             </div>
             <div className="px-2 pb-1 pt-4 sm:px-1">
               <p className="mono-label text-[color:var(--portfolio-muted)]">Seattle, WA</p>
-              <p className="mt-2 text-sm leading-relaxed text-[color:var(--portfolio-muted)] sm:text-base">
-                Product, program, and AI leadership grounded in engineering depth, enterprise execution, and measurable outcomes
-              </p>
             </div>
           </div>
         </motion.div>

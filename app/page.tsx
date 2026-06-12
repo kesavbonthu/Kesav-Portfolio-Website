@@ -235,7 +235,7 @@ export default function Home() {
           <div className="mb-12">
             <p className="section-eyebrow">05 / Experience</p>
             <h2 className="section-heading mt-4">
-              Career Journey: Engineering Depth → Product & Program Management → AI and Strategy
+              Career Experience
             </h2>
           </div>
 
@@ -275,7 +275,7 @@ export default function Home() {
           <div className="mb-12">
             <p className="section-eyebrow">06 / Skills by Role</p>
             <h2 className="section-heading mt-4">
-              Skills grouped by the types of work I do best
+              Skills
             </h2>
           </div>
 
@@ -292,7 +292,7 @@ export default function Home() {
           <div className="mb-12">
             <p className="section-eyebrow">07 / Roles I&apos;m Targeting</p>
             <h2 className="section-heading mt-4">
-              Clear fit for product, technical product, technical program, and program roles
+              Interested in product, technical product, technical program and program manager roles
             </h2>
           </div>
 
