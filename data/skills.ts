@@ -24,7 +24,7 @@ export const skillCategories: SkillCategory[] = [
     ],
   },
   {
-    category: "Technical Program Management",
+    category: "Program Management",
     icon: "⚙️",
     skills: [
       "Cross-functional Execution",
@@ -58,7 +58,7 @@ export const skillCategories: SkillCategory[] = [
     ],
   },
   {
-    category: "Engineering",
+    category: "Technical",
     icon: "💻",
     skills: [
       "Java",

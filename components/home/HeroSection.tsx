@@ -29,7 +29,7 @@ export default function HeroSection() {
           </h1>
 
           <p className="mt-6 max-w-3xl text-base leading-relaxed text-[color:var(--portfolio-muted)] sm:text-lg lg:max-w-2xl">
-            Recent MBA grad at UW Foster with 6+ years of experience across product management,
+            Recent MBA graduate at UW Foster with 6+ years of experience across product management,
             technical program execution, and software engineering. I specialize in building
             data-driven products, managing complex cross-functional initiatives, and turning technical
             complexity into measurable business outcomes

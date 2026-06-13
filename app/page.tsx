@@ -71,9 +71,9 @@ export default function Home() {
   const education = experiences.filter((exp) => exp.type === "education");
   const skillAreas = [
     "Product Management",
-    "Technical Program Management",
+    "Program Management",
     "AI / LLM / Agentic AI",
-    "Engineering",
+    "Technical",
   ];
   const filteredSkillCategories = skillCategories.filter((category) =>
     skillAreas.includes(category.category)
