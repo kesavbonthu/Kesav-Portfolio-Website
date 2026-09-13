@@ -1,4 +1,5 @@
 import { Badge } from "@/components/ui/badge";
+import { assetPath } from "@/lib/asset-path";
 import { type Experience } from "@/data/experience";
 import { Building2, Calendar, MapPin } from "lucide-react";
 
@@ -23,7 +24,7 @@ export default function ExperienceCard({ exp }: ExperienceCardProps) {
             <div className="mt-1.5 flex items-center gap-2 text-base text-[color:var(--portfolio-muted)]">
               {exp.logo ? (
                 <img
-                  src={exp.logo}
+                  src={assetPath(exp.logo)}
                   alt={`${exp.company} logo`}
                   className="h-5 w-5 rounded-sm object-contain"
                 />

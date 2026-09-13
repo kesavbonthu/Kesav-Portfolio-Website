@@ -3,6 +3,7 @@
 import { ExternalLink, MapPin } from "lucide-react";
 import { motion } from "framer-motion";
 import { profile } from "@/data/profile";
+import { assetPath } from "@/lib/asset-path";
 
 export default function HeroSection() {
   return (
@@ -67,7 +68,7 @@ export default function HeroSection() {
           <div className="paper-card overflow-hidden rounded-[2px] p-3 sm:p-4">
             <div className="aspect-[4/4.85] overflow-hidden rounded-[2px] bg-[color:var(--portfolio-cream)] sm:aspect-[4/4.7]">
               <img
-                src="/kesav-headshot.jpeg"
+                src={assetPath("/kesav-headshot.jpeg")}
                 alt="Portrait of Kesav Bonthu"
                 className="h-full w-full object-cover object-[center_20%]"
               />

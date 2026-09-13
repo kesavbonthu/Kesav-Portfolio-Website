@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { assetPath } from "@/lib/asset-path";
 import { GitFork, ExternalLink, Mail, MapPin } from "lucide-react";
 import { profile } from "@/data/profile";
 
@@ -10,7 +11,7 @@ export default function Footer() {
         <div className="mb-8 grid gap-4 border-b border-[color:var(--portfolio-border)] pb-8 sm:grid-cols-2">
           <div className="paper-card flex items-center gap-4 rounded-[2px] p-4">
             <img
-              src="/uw-logo.png"
+              src={assetPath("/uw-logo.png")}
               alt="University of Washington logo"
               className="h-12 w-12 rounded-sm object-contain"
             />
@@ -22,7 +23,7 @@ export default function Footer() {
 
           <div className="paper-card flex items-center gap-4 rounded-[2px] p-4">
             <img
-              src="/iitm-logo.png"
+              src={assetPath("/iitm-logo.png")}
               alt="IIT Madras logo"
               className="h-12 w-12 rounded-sm object-contain"
             />
