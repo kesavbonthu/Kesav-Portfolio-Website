@@ -1,6 +1,7 @@
 import RollingTitle from "@/components/animation/RollingTitle";
 import HeroSection from "@/components/home/HeroSection";
 import { ScrollRevealGroup, ScrollRevealItem } from "@/components/animation/ScrollReveal";
+import ExpandableExperience from "@/components/experience/ExpandableExperience";
 import ExperienceCard from "@/components/experience/ExperienceCard";
 import ProjectCard from "@/components/projects/ProjectCard";
 import SkillBadgeCloud from "@/components/skills/SkillBadgeCloud";
@@ -264,46 +265,48 @@ export default function Home() {
               </div>
             </ScrollRevealItem>
 
-            <div className="space-y-8">
-              <section>
-                <ScrollRevealItem className="mb-6">
-                  <h3 className="mono-label text-[color:var(--portfolio-muted)]">Industry Roles</h3>
-                </ScrollRevealItem>
-                <div>
-                  {fullTime.map((exp) => (
-                    <ScrollRevealItem key={`${exp.company}-${exp.role}`}>
-                      <ExperienceCard exp={exp} />
-                    </ScrollRevealItem>
-                  ))}
-                </div>
-              </section>
+            <ExpandableExperience>
+              <div className="space-y-8">
+                <section>
+                  <ScrollRevealItem className="mb-6">
+                    <h3 className="mono-label text-[color:var(--portfolio-muted)]">Industry Roles</h3>
+                  </ScrollRevealItem>
+                  <div>
+                    {fullTime.map((exp) => (
+                      <ScrollRevealItem key={`${exp.company}-${exp.role}`}>
+                        <ExperienceCard exp={exp} />
+                      </ScrollRevealItem>
+                    ))}
+                  </div>
+                </section>
 
-              <section>
-                <ScrollRevealItem className="mb-6">
-                  <h3 className="mono-label text-[color:var(--portfolio-muted)]">MBA Consulting Projects</h3>
-                </ScrollRevealItem>
-                <div>
-                  {consulting.map((exp) => (
-                    <ScrollRevealItem key={`${exp.company}-${exp.role}`}>
-                      <ExperienceCard exp={exp} />
-                    </ScrollRevealItem>
-                  ))}
-                </div>
-              </section>
+                <section>
+                  <ScrollRevealItem className="mb-6">
+                    <h3 className="mono-label text-[color:var(--portfolio-muted)]">MBA Consulting Projects</h3>
+                  </ScrollRevealItem>
+                  <div>
+                    {consulting.map((exp) => (
+                      <ScrollRevealItem key={`${exp.company}-${exp.role}`}>
+                        <ExperienceCard exp={exp} />
+                      </ScrollRevealItem>
+                    ))}
+                  </div>
+                </section>
 
-              <section>
-                <ScrollRevealItem className="mb-6">
-                  <h3 className="mono-label text-[color:var(--portfolio-muted)]">Education</h3>
-                </ScrollRevealItem>
-                <div>
-                  {education.map((exp) => (
-                    <ScrollRevealItem key={`${exp.company}-${exp.role}`}>
-                      <ExperienceCard exp={exp} />
-                    </ScrollRevealItem>
-                  ))}
-                </div>
-              </section>
-            </div>
+                <section>
+                  <ScrollRevealItem className="mb-6">
+                    <h3 className="mono-label text-[color:var(--portfolio-muted)]">Education</h3>
+                  </ScrollRevealItem>
+                  <div>
+                    {education.map((exp) => (
+                      <ScrollRevealItem key={`${exp.company}-${exp.role}`}>
+                        <ExperienceCard exp={exp} />
+                      </ScrollRevealItem>
+                    ))}
+                  </div>
+                </section>
+              </div>
+            </ExpandableExperience>
           </ScrollRevealGroup>
         </div>
       </section>
