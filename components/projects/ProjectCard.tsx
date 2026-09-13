@@ -1,3 +1,4 @@
+import MetricStat from "@/components/animation/MetricStat";
 import { Badge } from "@/components/ui/badge";
 import { type Project } from "@/data/projects";
 import Link from "next/link";
@@ -9,8 +10,8 @@ interface ProjectCardProps {
 
 export default function ProjectCard({ project }: ProjectCardProps) {
   return (
-    <Link href={`/projects/${project.slug}/`} className="paper-card project-card group flex h-full flex-col rounded-xl p-5">
-      <div className="flex items-start justify-between gap-2">
+    <Link href={`/projects/${project.slug}/`} className="paper-card project-card group flex h-full flex-col rounded-xl p-6">
+      <div className="flex flex-col items-start gap-2">
         <h3 className="text-2xl font-medium leading-tight text-[color:var(--portfolio-ink)] transition-colors group-hover:text-[color:var(--portfolio-accent)]">
           {project.title}
         </h3>
@@ -26,10 +27,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       {project.metrics.length > 0 && (
         <div className="mt-4 grid grid-cols-3 gap-3 border-t border-[color:var(--portfolio-border)] pt-3">
           {project.metrics.slice(0, 3).map((m, i) => (
-            <div key={i} className="min-w-0">
-              <div className="text-xl font-semibold text-[color:var(--portfolio-accent)]">{m.value}</div>
-              <div className="mono-label mt-1 text-[0.6rem] leading-relaxed tracking-normal text-[color:var(--portfolio-muted)]">{m.label}</div>
-            </div>
+            <MetricStat key={i} value={m.value} label={m.label} />
           ))}
         </div>
       )}

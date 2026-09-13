@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import type { ReactNode } from "react";
 
 interface ScrollRevealGroupProps {
@@ -39,12 +39,14 @@ const itemVariants = {
 };
 
 export function ScrollRevealGroup({ children, className }: ScrollRevealGroupProps) {
+  const reduced = useReducedMotion();
   return (
     <motion.div
       className={className}
       variants={groupVariants}
-      initial="hidden"
+      initial={false}
       whileInView="visible"
+      animate={reduced ? "visible" : undefined}
       viewport={{ once: true, amount: 0.16, margin: "0px 0px -8% 0px" }}
     >
       {children}
@@ -53,8 +55,9 @@ export function ScrollRevealGroup({ children, className }: ScrollRevealGroupProp
 }
 
 export function ScrollRevealItem({ children, className }: ScrollRevealItemProps) {
+  const reduced = useReducedMotion();
   return (
-    <motion.div className={className} variants={itemVariants}>
+    <motion.div className={className} variants={itemVariants} initial={reduced ? false : "hidden"} whileInView="visible" viewport={{ once: true, amount: 0.08 }}>
       {children}
     </motion.div>
   );

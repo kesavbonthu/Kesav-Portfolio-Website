@@ -1,8 +1,9 @@
+import MetricStat from "@/components/animation/MetricStat";
 import ExpandableExperience from "@/components/experience/ExpandableExperience";
 import { Badge } from "@/components/ui/badge";
 import { assetPath } from "@/lib/asset-path";
 import { type Experience } from "@/data/experience";
-import { Building2, Calendar, MapPin } from "lucide-react";
+import { Building2, Calendar, MapPin, BriefcaseBusiness, GraduationCap } from "lucide-react";
 
 interface ExperienceCardProps {
   exp: Experience;
@@ -10,12 +11,12 @@ interface ExperienceCardProps {
 
 export default function ExperienceCard({ exp }: ExperienceCardProps) {
   return (
-    <div className="relative pl-8 pb-5 last:pb-0">
+    <div className="experience-entry relative pl-10 pb-5">
       {/* Timeline line */}
-      <div className="absolute left-3 top-2 h-full w-px bg-[color:var(--portfolio-border)] last:hidden" />
+      <div className="absolute left-3.5 top-5 h-full w-px bg-[color:var(--portfolio-border)]" />
       {/* Timeline dot */}
-      <div className="absolute left-0 top-1.5 flex h-6 w-6 items-center justify-center rounded-full border-2 border-[color:var(--portfolio-accent)] bg-[color:var(--portfolio-paper)]">
-        <div className="h-2 w-2 rounded-full bg-[color:var(--portfolio-accent)]" />
+      <div className="timeline-marker" aria-hidden="true">
+        {exp.type === "education" ? <GraduationCap size={15} /> : <BriefcaseBusiness size={15} />}
       </div>
 
       <div className="paper-card rounded-xl p-5">
@@ -25,6 +26,9 @@ export default function ExperienceCard({ exp }: ExperienceCardProps) {
             <div className="mt-1.5 flex items-center gap-2 text-base text-[color:var(--portfolio-muted)]">
               {exp.logo ? (
                 <img
+                  loading="lazy"
+                  width={20}
+                  height={20}
                   src={assetPath(exp.logo)}
                   alt={`${exp.company} logo`}
                   className="h-5 w-5 rounded-sm object-contain"
@@ -75,12 +79,9 @@ export default function ExperienceCard({ exp }: ExperienceCardProps) {
           )}
 
           {exp.metrics.length > 0 && (
-            <div className="mt-4 flex flex-wrap gap-6 border-t border-[color:var(--portfolio-border)] pt-4">
+            <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4 border-t border-[color:var(--portfolio-border)] pt-4">
               {exp.metrics.map((m, i) => (
-                <div key={i} className="text-center">
-                  <div className="text-2xl font-semibold text-[color:var(--portfolio-accent)]">{m.value}</div>
-                  <div className="mono-label mt-1 text-[color:var(--portfolio-muted)]">{m.label}</div>
-                </div>
+                <MetricStat key={i} value={m.value} label={m.label} />
               ))}
             </div>
           )}

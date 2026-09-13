@@ -15,7 +15,7 @@ export default function SkillBadgeCloud({ category }: SkillBadgeCloudProps) {
         {category.skills.map((skill) => (
           <div
             key={skill}
-            className="rounded-[2px] border border-[color:var(--portfolio-border)] bg-[color:var(--portfolio-cream)]/35 px-2.5 py-1.5 text-sm font-medium text-[color:var(--portfolio-deep)]"
+            className="skill-chip"
           >
             {skill}
           </div>

@@ -5,12 +5,15 @@ import { profile } from "@/data/profile";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-[color:var(--portfolio-border)] bg-[rgba(255,253,249,0.82)]">
+    <footer className="border-t border-[color:var(--portfolio-border)] bg-[color:var(--portfolio-surface)]">
       <div className="mx-auto max-w-screen-2xl px-6 py-10 sm:px-10 lg:px-16">
         <p className="mono-label mb-4 text-[color:var(--portfolio-muted)]">Academic Affiliation</p>
         <div className="mb-8 grid gap-4 border-b border-[color:var(--portfolio-border)] pb-8 sm:grid-cols-2">
           <div className="paper-card flex items-center gap-4 rounded-[2px] p-4">
             <img
+              loading="lazy"
+              width={48}
+              height={48}
               src={assetPath("/uw-logo.png")}
               alt="University of Washington logo"
               className="h-12 w-12 rounded-sm object-contain"
@@ -23,6 +26,9 @@ export default function Footer() {
 
           <div className="paper-card flex items-center gap-4 rounded-[2px] p-4">
             <img
+              loading="lazy"
+              width={48}
+              height={48}
               src={assetPath("/iitm-logo.png")}
               alt="IIT Madras logo"
               className="h-12 w-12 rounded-sm object-contain"

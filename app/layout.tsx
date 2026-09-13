@@ -1,7 +1,10 @@
+import { Geist } from "next/font/google";
 import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+
+const geist = Geist({ subsets: ["latin"], variable: "--font-geist", display: "swap" });
 
 export const metadata: Metadata = {
   title: {
@@ -40,10 +43,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={geist.variable} suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: `(function(){try{var theme=localStorage.getItem("portfolio-theme");document.documentElement.classList.toggle("dark",theme==="dark"||(!theme&&matchMedia("(prefers-color-scheme: dark)").matches));}catch(e){}})();` }} />
+      </head>
       <body className="portfolio-shell min-h-screen flex flex-col antialiased font-sans">
+        <a className="skip-link" href="#main-content">Skip to content</a>
         <Navbar />
-        <main className="flex-1">{children}</main>
+        <main id="main-content" className="flex-1">{children}</main>
         <Footer />
       </body>
     </html>

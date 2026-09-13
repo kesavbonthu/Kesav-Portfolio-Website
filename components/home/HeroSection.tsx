@@ -2,22 +2,20 @@
 
 import { ExternalLink, MapPin } from "lucide-react";
 import RollingTitle from "@/components/animation/RollingTitle";
-import { motion } from "framer-motion";
+import RotatingRole from "./RotatingRole";
+import { motion, useReducedMotion } from "framer-motion";
 import { profile } from "@/data/profile";
 import { assetPath } from "@/lib/asset-path";
 
 export default function HeroSection() {
+  const reduced = useReducedMotion();
   return (
-    <section id="top" className="relative overflow-hidden bg-[color:var(--portfolio-paper)] py-10 sm:py-14 lg:py-16">
-      {/* Background gradient */}
-      <div className="pointer-events-none absolute inset-0">
-        <div className="absolute right-[-8rem] top-[-10rem] h-[34rem] w-[34rem] rounded-full bg-[radial-gradient(circle,rgba(29,78,216,0.16),transparent_70%)]" />
-        <div className="absolute bottom-[-12rem] left-[-8rem] h-[28rem] w-[28rem] rounded-full bg-[radial-gradient(circle,rgba(15,118,110,0.12),transparent_70%)]" />
-      </div>
+    <section id="top" className="hero-section relative overflow-hidden py-14 sm:py-20 lg:py-24">
+      <div className="hero-ambient" aria-hidden="true" />
 
       <div className="relative mx-auto grid max-w-screen-2xl items-center gap-7 px-6 sm:px-10 lg:grid-cols-[minmax(0,1.08fr)_minmax(300px,0.72fr)] lg:gap-10 lg:px-16">
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
+          initial={reduced ? false : { opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.65 }}
         >
@@ -26,7 +24,9 @@ export default function HeroSection() {
             {profile.location}
           </p>
 
-          <h1 className="max-w-4xl text-4xl font-light tracking-tight text-[color:var(--portfolio-ink)] sm:text-5xl lg:text-[3.25rem] xl:text-[3.5rem]">
+          <RotatingRole />
+
+          <h1 className="hero-title">
             <RollingTitle>Product and Program Manager building AI, financial services, and enterprise workflow solutions</RollingTitle>
           </h1>
 
@@ -42,7 +42,7 @@ export default function HeroSection() {
             {profile.credentials.map((cred) => (
               <span
                 key={cred}
-                className="mono-label rounded-full border border-[color:var(--portfolio-border)] bg-[rgba(255,253,249,0.85)] px-4 py-2 text-[color:var(--portfolio-muted)]"
+                className="mono-label rounded-full border border-[color:var(--portfolio-border)] bg-[color:var(--portfolio-panel)] px-4 py-2 text-[color:var(--portfolio-muted)]"
               >
                 {cred}
               </span>
@@ -52,7 +52,7 @@ export default function HeroSection() {
           <div className="mt-6 flex flex-wrap gap-4">
             <a
               href={profile.linkedin}
-              className="mono-label flex items-center gap-2 rounded-sm border border-[color:var(--portfolio-border)] bg-[rgba(255,253,249,0.72)] px-7 py-3.5 text-[color:var(--portfolio-ink)] transition-colors hover:border-[color:var(--portfolio-accent)] hover:text-[color:var(--portfolio-accent)]"
+              className="mono-label flex items-center gap-2 rounded-sm border border-[color:var(--portfolio-border)] bg-[color:var(--portfolio-panel)] px-7 py-3.5 text-[color:var(--portfolio-ink)] transition-colors hover:border-[color:var(--portfolio-accent)] hover:text-[color:var(--portfolio-accent)]"
             >
               <ExternalLink className="h-5 w-5" />
               Connect on LinkedIn
@@ -61,14 +61,17 @@ export default function HeroSection() {
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
+          initial={reduced ? false : { opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.15 }}
-          className="mx-auto w-full max-w-[21rem]"
+          className="hero-portrait mx-auto w-full max-w-[24rem]"
         >
-          <div className="paper-card overflow-hidden rounded-[2px] p-3 sm:p-4">
+          <div className="portrait-frame overflow-hidden p-3 sm:p-4">
             <div className="aspect-[4/4.85] overflow-hidden rounded-[2px] bg-[color:var(--portfolio-cream)] sm:aspect-[4/4.7]">
               <img
+                width={640}
+                height={760}
+                fetchPriority="high"
                 src={assetPath("/kesav-headshot.jpeg")}
                 alt="Portrait of Kesav Bonthu"
                 className="h-full w-full object-cover object-[center_20%]"

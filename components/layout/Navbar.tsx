@@ -1,90 +1,59 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
+import ThemeToggle from "./ThemeToggle";
 
 const navLinks = [
   { href: "#top", label: "Home" },
+  { href: "#about", label: "Positioning" },
   { href: "#projects", label: "Case Studies" },
   { href: "#ai-projects", label: "AI Projects" },
   { href: "#consulting", label: "Consulting" },
   { href: "#experience", label: "Experience" },
+  { href: "#skills", label: "Skills" },
+  { href: "#roles", label: "Target Roles" },
   { href: "#contact", label: "Contact" },
 ];
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [active, setActive] = useState("");
+  const pathname = usePathname();
+  useEffect(() => {
+    let frame = 0;
+    const update = () => {
+      const sections = navLinks.map(({ href }) => document.getElementById(href.slice(1))).filter((node): node is HTMLElement => Boolean(node));
+      const current = sections.filter((node) => node.getBoundingClientRect().top <= 180).at(-1);
+      setActive(current ? `#${current.id}` : "");
+    };
+    const onScroll = () => { cancelAnimationFrame(frame); frame = requestAnimationFrame(update); };
+    update();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => { window.removeEventListener("scroll", onScroll); cancelAnimationFrame(frame); };
+  }, [pathname]);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-[color:var(--portfolio-border)]/70 bg-[rgba(246,243,238,0.88)] backdrop-blur supports-[backdrop-filter]:bg-[rgba(246,243,238,0.72)]">
-      <nav className="mx-auto flex max-w-screen-2xl items-center justify-between px-6 py-4 sm:px-10 lg:px-16">
-        <Link href="/#top" className="font-heading text-xl font-semibold tracking-[0.04em] text-[color:var(--portfolio-ink)]">
-          Kesav Bonthu
-        </Link>
-
-        {/* Desktop nav */}
-        <ul className="hidden lg:flex items-center gap-4">
-          {navLinks.map((link) => (
-            <li key={link.href}>
-              <Link
-                href={`/${link.href}`}
-                className="mono-label rounded-md px-2 py-2 text-[color:var(--portfolio-muted)] transition-colors hover:text-[color:var(--portfolio-accent)]"
-              >
-                {link.label}
-              </Link>
-            </li>
-          ))}
+    <header className="site-header">
+      <nav className="nav-inner" aria-label="Main navigation">
+        <Link href="/#top" className="brand" onClick={() => setOpen(false)}><span className="brand-mark" aria-hidden="true">K.</span><span>Kesav Bonthu</span></Link>
+        <ul className="desktop-nav">
+          {navLinks.map((link) => <li key={link.href}><Link href={`/${link.href}`} aria-current={active === link.href ? "location" : undefined}>{link.label}</Link></li>)}
         </ul>
-
-        <div className="hidden lg:flex items-center gap-3">
-          <Link
-            href="/#contact"
-            className="mono-label rounded-sm bg-[color:var(--portfolio-accent)] px-4 py-2 text-white transition-colors hover:bg-[color:var(--portfolio-highlight)]"
-          >
-            Let&apos;s Connect
-          </Link>
+        <div className="nav-actions">
+          <ThemeToggle />
+          <button className="theme-toggle xl:hidden" onClick={() => setOpen(!open)} aria-label="Toggle menu" aria-expanded={open} aria-controls="mobile-navigation">
+            {open ? <X size={20} /> : <Menu size={20} />}
+          </button>
         </div>
-
-        {/* Mobile menu button */}
-        <button
-          className="lg:hidden text-[color:var(--portfolio-muted)] hover:text-[color:var(--portfolio-accent)]"
-          onClick={() => setOpen(!open)}
-          aria-label="Toggle menu"
-          aria-expanded={open}
-          aria-controls="mobile-navigation"
-        >
-          {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-        </button>
       </nav>
-
-      {/* Mobile menu */}
-      {open && (
-        <div id="mobile-navigation" className="border-t border-[color:var(--portfolio-border)] bg-[color:var(--portfolio-paper)] px-4 py-4 lg:hidden">
-          <ul className="space-y-1">
-            {navLinks.map((link) => (
-              <li key={link.href}>
-                <Link
-                  href={`/${link.href}`}
-                  onClick={() => setOpen(false)}
-                  className="mono-label block rounded-md px-3 py-2 text-[color:var(--portfolio-muted)] transition-colors hover:bg-[color:var(--portfolio-accent-soft)] hover:text-[color:var(--portfolio-accent)]"
-                >
-                  {link.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-          <div className="mt-4 border-t border-[color:var(--portfolio-border)] pt-4">
-            <Link
-              href="/#contact"
-              onClick={() => setOpen(false)}
-              className="mono-label flex items-center justify-center rounded-sm bg-[color:var(--portfolio-accent)] px-4 py-2 text-white transition-colors hover:bg-[color:var(--portfolio-highlight)]"
-            >
-              Let&apos;s Connect
-            </Link>
-          </div>
-        </div>
-      )}
+      {open && <div id="mobile-navigation" className="mobile-nav xl:hidden">
+        {navLinks.map((link) => <Link key={link.href} href={`/${link.href}`} aria-current={active === link.href ? "location" : undefined} onClick={() => setOpen(false)}>{link.label}</Link>)}
+        <Link href="/#contact" className="connect-link" onClick={() => setOpen(false)}>Let&apos;s Connect</Link>
+      </div>}
+      <Link href="/#contact" className="sr-only focus:not-sr-only">Let&apos;s Connect</Link>
     </header>
   );
 }

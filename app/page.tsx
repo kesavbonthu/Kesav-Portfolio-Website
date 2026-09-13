@@ -1,9 +1,10 @@
 import RollingTitle from "@/components/animation/RollingTitle";
+import ImpactHighlights from "@/components/home/ImpactHighlights";
 import HeroSection from "@/components/home/HeroSection";
 import { ScrollRevealGroup, ScrollRevealItem } from "@/components/animation/ScrollReveal";
 import ExperienceCard from "@/components/experience/ExperienceCard";
 import ProjectCard from "@/components/projects/ProjectCard";
-import SkillBadgeCloud from "@/components/skills/SkillBadgeCloud";
+import SkillsExplorer from "@/components/skills/SkillsExplorer";
 import { consultingProjects } from "@/data/consulting";
 import { experiences } from "@/data/experience";
 import { profile } from "@/data/profile";
@@ -83,8 +84,9 @@ export default function Home() {
   return (
     <>
       <HeroSection />
+      <ImpactHighlights />
 
-      <section id="about" className="border-t border-[color:var(--portfolio-border)] bg-transparent py-12 sm:py-14">
+      <section id="about" className="border-t border-[color:var(--portfolio-border)] bg-transparent py-16 sm:py-20">
         <div className="mx-auto max-w-screen-2xl px-6 sm:px-10 lg:px-16">
           <ScrollRevealGroup className="grid gap-6 lg:grid-cols-[minmax(0,1.15fr)_minmax(320px,0.85fr)] lg:gap-8">
             <ScrollRevealItem>
@@ -113,7 +115,7 @@ export default function Home() {
             </ScrollRevealItem>
 
             <ScrollRevealItem>
-              <div className="paper-card rounded-[2px] p-5">
+              <div className="paper-card rounded-2xl p-5">
                 <p className="mono-label text-[color:var(--portfolio-muted)]">What I Bring</p>
                 <div className="mt-5 space-y-4">
                   {whatIBring.map((item) => (
@@ -124,7 +126,7 @@ export default function Home() {
                       </p>
                     </div>
                   ))}
-                  <div className="rounded-[2px] bg-[color:var(--portfolio-cream)]/45 p-4">
+                  <div className="rounded-2xl bg-[color:var(--portfolio-cream)]/45 p-4">
                     <p className="mono-label text-[color:var(--portfolio-muted)]">Core Differentiator</p>
                     <p className="mt-2 text-base leading-relaxed text-[color:var(--portfolio-deep)]">
                       Equally strong in product strategy and program execution, with the technical
@@ -139,7 +141,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="projects" className="border-t border-[color:var(--portfolio-border)] bg-transparent py-12 sm:py-14">
+      <section id="projects" className="border-t border-[color:var(--portfolio-border)] bg-transparent py-16 sm:py-20">
         <div className="mx-auto max-w-screen-2xl px-6 sm:px-10 lg:px-16">
           <ScrollRevealGroup>
             <ScrollRevealItem className="mb-7">
@@ -162,7 +164,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="ai-projects" className="border-t border-[color:var(--portfolio-border)] bg-[rgba(255,253,249,0.45)] py-12 sm:py-14">
+      <section id="ai-projects" className="border-t border-[color:var(--portfolio-border)] bg-[color:var(--portfolio-surface)] py-16 sm:py-20">
         <div className="mx-auto max-w-screen-2xl px-6 sm:px-10 lg:px-16">
           <ScrollRevealGroup>
             <ScrollRevealItem className="mb-7">
@@ -202,7 +204,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="consulting" className="border-t border-[color:var(--portfolio-border)] bg-transparent py-12 sm:py-14">
+      <section id="consulting" className="border-t border-[color:var(--portfolio-border)] bg-transparent py-16 sm:py-20">
         <div className="mx-auto max-w-screen-2xl px-6 sm:px-10 lg:px-16">
           <ScrollRevealGroup>
             <ScrollRevealItem className="mb-7">
@@ -252,7 +254,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="experience" className="border-t border-[color:var(--portfolio-border)] bg-[rgba(255,253,249,0.45)] py-12 sm:py-14">
+      <section id="experience" className="border-t border-[color:var(--portfolio-border)] bg-[color:var(--portfolio-surface)] py-16 sm:py-20">
         <div className="mx-auto max-w-screen-2xl px-6 sm:px-10 lg:px-16">
           <ScrollRevealGroup>
             <ScrollRevealItem className="mb-7">
@@ -308,7 +310,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="skills" className="border-t border-[color:var(--portfolio-border)] bg-transparent py-12 sm:py-14">
+      <section id="skills" className="border-t border-[color:var(--portfolio-border)] bg-transparent py-16 sm:py-20">
         <div className="mx-auto max-w-screen-2xl px-6 sm:px-10 lg:px-16">
           <ScrollRevealGroup>
             <ScrollRevealItem className="mb-7">
@@ -320,18 +322,12 @@ export default function Home() {
               </div>
             </ScrollRevealItem>
 
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-              {filteredSkillCategories.map((category) => (
-                <ScrollRevealItem key={category.category}>
-                  <SkillBadgeCloud category={category} />
-                </ScrollRevealItem>
-              ))}
-            </div>
+            <SkillsExplorer categories={filteredSkillCategories} />
           </ScrollRevealGroup>
         </div>
       </section>
 
-      <section id="roles" className="border-t border-[color:var(--portfolio-border)] bg-[rgba(255,253,249,0.45)] py-12 sm:py-14">
+      <section id="roles" className="border-t border-[color:var(--portfolio-border)] bg-[color:var(--portfolio-surface)] py-16 sm:py-20">
         <div className="mx-auto max-w-screen-2xl px-6 sm:px-10 lg:px-16">
           <ScrollRevealGroup>
             <ScrollRevealItem className="mb-7">
@@ -357,7 +353,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="contact" className="border-t border-[color:var(--portfolio-border)] bg-[rgba(255,253,249,0.45)] py-12 sm:py-14">
+      <section id="contact" className="border-t border-[color:var(--portfolio-border)] bg-[color:var(--portfolio-surface)] py-16 sm:py-20">
         <div className="mx-auto max-w-screen-2xl px-6 sm:px-10 lg:px-16">
           <ScrollRevealGroup className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
             <ScrollRevealItem>
@@ -373,7 +369,7 @@ export default function Home() {
               <ScrollRevealItem>
                 <a
                   href={`mailto:${profile.email}`}
-                  className="paper-card group block rounded-[2px] p-5 transition-colors hover:border-[color:var(--portfolio-accent)]"
+                  className="paper-card group block rounded-2xl p-5 transition-colors hover:border-[color:var(--portfolio-accent)]"
                 >
                   <div className="mb-3 flex items-center gap-3">
                     <div className="rounded-sm bg-[color:var(--portfolio-accent-soft)] p-2">
@@ -390,7 +386,7 @@ export default function Home() {
               <ScrollRevealItem>
                 <a
                   href={profile.linkedin}
-                  className="paper-card group block rounded-[2px] p-5 transition-colors hover:border-[color:var(--portfolio-accent)]"
+                  className="paper-card group block rounded-2xl p-5 transition-colors hover:border-[color:var(--portfolio-accent)]"
                 >
                   <div className="mb-3 flex items-center gap-3">
                     <div className="rounded-sm bg-[color:var(--portfolio-accent-soft)] p-2">
@@ -407,7 +403,7 @@ export default function Home() {
               <ScrollRevealItem>
                 <a
                   href={profile.github}
-                  className="paper-card group block rounded-[2px] p-5 transition-colors hover:border-[color:var(--portfolio-accent)]"
+                  className="paper-card group block rounded-2xl p-5 transition-colors hover:border-[color:var(--portfolio-accent)]"
                 >
                   <div className="mb-3 flex items-center gap-3">
                     <div className="rounded-sm bg-[color:var(--portfolio-accent-soft)] p-2">
@@ -422,7 +418,7 @@ export default function Home() {
               </ScrollRevealItem>
 
               <ScrollRevealItem>
-                <div className="paper-card rounded-[2px] p-5">
+                <div className="paper-card rounded-2xl p-5">
                   <div className="mb-3 flex items-center gap-3">
                     <div className="rounded-sm bg-[color:var(--portfolio-accent-soft)] p-2">
                       <MapPin className="h-5 w-5 text-[color:var(--portfolio-accent)]" />
