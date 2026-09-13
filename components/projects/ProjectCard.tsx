@@ -24,11 +24,11 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       <p className="mt-4 flex-1 text-sm leading-relaxed text-[color:var(--portfolio-muted)]">{project.summary}</p>
 
       {project.metrics.length > 0 && (
-        <div className="mt-5 flex flex-wrap gap-5 border-t border-[color:var(--portfolio-border)] pt-5">
+        <div className="mt-4 grid grid-cols-3 gap-3 border-t border-[color:var(--portfolio-border)] pt-3">
           {project.metrics.slice(0, 3).map((m, i) => (
-            <div key={i} className="text-center">
+            <div key={i} className="min-w-0">
               <div className="text-xl font-semibold text-[color:var(--portfolio-accent)]">{m.value}</div>
-              <div className="mono-label mt-1 text-[color:var(--portfolio-muted)]">{m.label}</div>
+              <div className="mono-label mt-1 text-[0.6rem] leading-relaxed tracking-normal text-[color:var(--portfolio-muted)]">{m.label}</div>
             </div>
           ))}
         </div>
