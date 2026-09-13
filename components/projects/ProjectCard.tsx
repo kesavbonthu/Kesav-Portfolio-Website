@@ -1,5 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 import { type Project } from "@/data/projects";
+import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 
 interface ProjectCardProps {
   project: Project;
@@ -7,7 +9,7 @@ interface ProjectCardProps {
 
 export default function ProjectCard({ project }: ProjectCardProps) {
   return (
-    <div className="paper-card group flex flex-col rounded-[2px] p-6 transition-all duration-200 hover:-translate-y-1 hover:border-[color:var(--portfolio-accent)]">
+    <Link href={`/projects/${project.slug}/`} className="paper-card project-card group flex h-full flex-col rounded-xl p-5">
       <div className="flex items-start justify-between gap-2">
         <h3 className="text-2xl font-medium leading-tight text-[color:var(--portfolio-ink)] transition-colors group-hover:text-[color:var(--portfolio-accent)]">
           {project.title}
@@ -44,6 +46,9 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         ))}
       </div>
 
-    </div>
+      <span className="mt-4 flex items-center justify-between border-t border-[color:var(--portfolio-border)] pt-3 text-xs font-semibold text-[color:var(--portfolio-accent)]">
+        Explore case study <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+      </span>
+    </Link>
   );
 }

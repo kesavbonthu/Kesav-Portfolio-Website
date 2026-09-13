@@ -9,7 +9,7 @@ interface ExperienceCardProps {
 
 export default function ExperienceCard({ exp }: ExperienceCardProps) {
   return (
-    <div className="relative pl-8 pb-10 last:pb-0">
+    <div className="relative pl-8 pb-5 last:pb-0">
       {/* Timeline line */}
       <div className="absolute left-3 top-2 h-full w-px bg-[color:var(--portfolio-border)] last:hidden" />
       {/* Timeline dot */}
@@ -17,7 +17,7 @@ export default function ExperienceCard({ exp }: ExperienceCardProps) {
         <div className="h-2 w-2 rounded-full bg-[color:var(--portfolio-accent)]" />
       </div>
 
-      <div className="paper-card rounded-[2px] p-6">
+      <div className="paper-card rounded-xl p-5">
         <div className="flex flex-wrap items-start justify-between gap-3">
           <div>
             <h3 className="text-2xl font-medium text-[color:var(--portfolio-ink)]">{exp.role}</h3>
@@ -61,7 +61,7 @@ export default function ExperienceCard({ exp }: ExperienceCardProps) {
               ))}
             </div>
           ) : (
-            <ul className="mt-5 space-y-2">
+            <ul className="mt-4 space-y-2">
               {exp.highlights.map((h, i) => (
                 <li key={i} className="flex items-start gap-2.5 text-sm text-[color:var(--portfolio-muted)]">
                   <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[color:var(--portfolio-highlight)]" />
@@ -73,7 +73,7 @@ export default function ExperienceCard({ exp }: ExperienceCardProps) {
         )}
 
         {exp.metrics.length > 0 && (
-          <div className="mt-5 flex flex-wrap gap-6 border-t border-[color:var(--portfolio-border)] pt-5">
+          <div className="mt-4 flex flex-wrap gap-6 border-t border-[color:var(--portfolio-border)] pt-4">
             {exp.metrics.map((m, i) => (
               <div key={i} className="text-center">
                 <div className="text-2xl font-semibold text-[color:var(--portfolio-accent)]">{m.value}</div>
@@ -83,7 +83,7 @@ export default function ExperienceCard({ exp }: ExperienceCardProps) {
           </div>
         )}
 
-        <div className="mt-5 flex flex-wrap gap-2">
+        <div className="mt-4 flex flex-wrap gap-2">
           {exp.skills.map((skill) => (
             <Badge
               key={skill}

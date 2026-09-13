@@ -19,7 +19,7 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-[color:var(--portfolio-border)]/70 bg-[rgba(246,243,238,0.88)] backdrop-blur supports-[backdrop-filter]:bg-[rgba(246,243,238,0.72)]">
       <nav className="mx-auto flex max-w-screen-2xl items-center justify-between px-6 py-4 sm:px-10 lg:px-16">
-        <Link href="#top" className="font-heading text-xl font-semibold tracking-[0.04em] text-[color:var(--portfolio-ink)]">
+        <Link href="/#top" className="font-heading text-xl font-semibold tracking-[0.04em] text-[color:var(--portfolio-ink)]">
           Kesav Bonthu
         </Link>
 
@@ -28,7 +28,7 @@ export default function Navbar() {
           {navLinks.map((link) => (
             <li key={link.href}>
               <Link
-                href={link.href}
+                href={`/${link.href}`}
                 className="mono-label rounded-md px-2 py-2 text-[color:var(--portfolio-muted)] transition-colors hover:text-[color:var(--portfolio-accent)]"
               >
                 {link.label}
@@ -39,7 +39,7 @@ export default function Navbar() {
 
         <div className="hidden lg:flex items-center gap-3">
           <Link
-            href="#contact"
+            href="/#contact"
             className="mono-label rounded-sm bg-[color:var(--portfolio-accent)] px-4 py-2 text-white transition-colors hover:bg-[color:var(--portfolio-highlight)]"
           >
             Let&apos;s Connect
@@ -51,6 +51,8 @@ export default function Navbar() {
           className="lg:hidden text-[color:var(--portfolio-muted)] hover:text-[color:var(--portfolio-accent)]"
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
+          aria-expanded={open}
+          aria-controls="mobile-navigation"
         >
           {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
@@ -58,12 +60,12 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="border-t border-[color:var(--portfolio-border)] bg-[color:var(--portfolio-paper)] px-4 py-4 lg:hidden">
+        <div id="mobile-navigation" className="border-t border-[color:var(--portfolio-border)] bg-[color:var(--portfolio-paper)] px-4 py-4 lg:hidden">
           <ul className="space-y-1">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <Link
-                  href={link.href}
+                  href={`/${link.href}`}
                   onClick={() => setOpen(false)}
                   className="mono-label block rounded-md px-3 py-2 text-[color:var(--portfolio-muted)] transition-colors hover:bg-[color:var(--portfolio-accent-soft)] hover:text-[color:var(--portfolio-accent)]"
                 >
@@ -74,7 +76,7 @@ export default function Navbar() {
           </ul>
           <div className="mt-4 border-t border-[color:var(--portfolio-border)] pt-4">
             <Link
-              href="#contact"
+              href="/#contact"
               onClick={() => setOpen(false)}
               className="mono-label flex items-center justify-center rounded-sm bg-[color:var(--portfolio-accent)] px-4 py-2 text-white transition-colors hover:bg-[color:var(--portfolio-highlight)]"
             >

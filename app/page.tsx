@@ -1,3 +1,4 @@
+import RollingTitle from "@/components/animation/RollingTitle";
 import HeroSection from "@/components/home/HeroSection";
 import { ScrollRevealGroup, ScrollRevealItem } from "@/components/animation/ScrollReveal";
 import ExperienceCard from "@/components/experience/ExperienceCard";
@@ -83,16 +84,16 @@ export default function Home() {
     <>
       <HeroSection />
 
-      <section id="about" className="border-t border-[color:var(--portfolio-border)] bg-transparent py-20">
+      <section id="about" className="border-t border-[color:var(--portfolio-border)] bg-transparent py-12 sm:py-14">
         <div className="mx-auto max-w-screen-2xl px-6 sm:px-10 lg:px-16">
-          <ScrollRevealGroup className="grid gap-8 lg:grid-cols-[minmax(0,1.15fr)_minmax(320px,0.85fr)] lg:gap-12">
+          <ScrollRevealGroup className="grid gap-6 lg:grid-cols-[minmax(0,1.15fr)_minmax(320px,0.85fr)] lg:gap-8">
             <ScrollRevealItem>
               <div>
                 <p className="section-eyebrow">01 / Positioning</p>
                 <h2 className="section-heading mt-4">
-                  Product and Program Manager with engineering depth, AI experience, and a track record of measurable impact
+                  <RollingTitle>Product and Program Manager with engineering depth, AI experience, and a track record of measurable impact</RollingTitle>
                 </h2>
-                <div className="section-copy mt-6 max-w-3xl space-y-5 text-base sm:text-lg">
+                <div className="section-copy mt-4 max-w-3xl space-y-4 text-base sm:text-lg">
                   <p>
                     {profile.summary}
                   </p>
@@ -112,9 +113,9 @@ export default function Home() {
             </ScrollRevealItem>
 
             <ScrollRevealItem>
-              <div className="paper-card rounded-[2px] p-6 sm:p-7">
+              <div className="paper-card rounded-[2px] p-5">
                 <p className="mono-label text-[color:var(--portfolio-muted)]">What I Bring</p>
-                <div className="mt-5 space-y-5">
+                <div className="mt-5 space-y-4">
                   {whatIBring.map((item) => (
                     <div key={item.title} className="border-b border-[color:var(--portfolio-border)]/70 pb-5 last:border-b-0 last:pb-0">
                       <h3 className="text-xl font-medium text-[color:var(--portfolio-ink)]">{item.title}</h3>
@@ -138,19 +139,19 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="projects" className="border-t border-[color:var(--portfolio-border)] bg-transparent py-20">
+      <section id="projects" className="border-t border-[color:var(--portfolio-border)] bg-transparent py-12 sm:py-14">
         <div className="mx-auto max-w-screen-2xl px-6 sm:px-10 lg:px-16">
           <ScrollRevealGroup>
-            <ScrollRevealItem className="mb-12">
+            <ScrollRevealItem className="mb-7">
               <div>
                 <p className="section-eyebrow">02 / Featured Case Studies</p>
                 <h2 className="section-heading mt-4">
-                  Product, program, AI, financial services, and enterprise execution in one portfolio
+                  <RollingTitle>Product, program, AI, financial services, and enterprise execution in one portfolio</RollingTitle>
                 </h2>
               </div>
             </ScrollRevealItem>
 
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {featuredCaseStudies.map((project) => (
                 <ScrollRevealItem key={project.slug}>
                   <ProjectCard project={project} />
@@ -161,22 +162,22 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="ai-projects" className="border-t border-[color:var(--portfolio-border)] bg-[rgba(255,253,249,0.45)] py-20">
+      <section id="ai-projects" className="border-t border-[color:var(--portfolio-border)] bg-[rgba(255,253,249,0.45)] py-12 sm:py-14">
         <div className="mx-auto max-w-screen-2xl px-6 sm:px-10 lg:px-16">
           <ScrollRevealGroup>
-            <ScrollRevealItem className="mb-12">
+            <ScrollRevealItem className="mb-7">
               <div>
                 <p className="section-eyebrow">03 / AI Projects</p>
                 <h2 className="section-heading mt-4">
-                  Personal AI and agentic workflow work beyond core operating roles
+                  <RollingTitle>Personal AI and agentic workflow work beyond core operating roles</RollingTitle>
                 </h2>
               </div>
             </ScrollRevealItem>
 
-            <div className="grid gap-6 lg:grid-cols-2">
+            <div className="grid gap-4 lg:grid-cols-2">
               {aiProjects.map((project) => (
                 <ScrollRevealItem key={project.slug}>
-                  <div className="paper-card rounded-[2px] p-6">
+                  <div className="paper-card rounded-xl p-5">
                     <div>
                       <h3 className="text-3xl font-medium text-[color:var(--portfolio-ink)]">{project.title}</h3>
                     </div>
@@ -201,22 +202,22 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="consulting" className="border-t border-[color:var(--portfolio-border)] bg-transparent py-20">
+      <section id="consulting" className="border-t border-[color:var(--portfolio-border)] bg-transparent py-12 sm:py-14">
         <div className="mx-auto max-w-screen-2xl px-6 sm:px-10 lg:px-16">
           <ScrollRevealGroup>
-            <ScrollRevealItem className="mb-12">
+            <ScrollRevealItem className="mb-7">
               <div>
                 <p className="section-eyebrow">04 / Consulting Work</p>
                 <h2 className="section-heading mt-4">
-                  MBA strategy work across enterprise workflow design and payments growth
+                  <RollingTitle>MBA strategy work across enterprise workflow design and payments growth</RollingTitle>
                 </h2>
               </div>
             </ScrollRevealItem>
 
-            <div className="grid gap-6 lg:grid-cols-2">
+            <div className="grid gap-4 lg:grid-cols-2">
               {consultingWork.map((project) => (
                 <ScrollRevealItem key={project.slug}>
-                  <div className="paper-card rounded-[2px] p-6">
+                  <div className="paper-card rounded-xl p-5">
                     <h3 className="text-3xl font-medium text-[color:var(--portfolio-ink)]">{project.project}</h3>
                     <p className="mt-4 text-sm leading-relaxed text-[color:var(--portfolio-muted)]">
                       {project.challenge}
@@ -251,19 +252,19 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="experience" className="border-t border-[color:var(--portfolio-border)] bg-[rgba(255,253,249,0.45)] py-20">
+      <section id="experience" className="border-t border-[color:var(--portfolio-border)] bg-[rgba(255,253,249,0.45)] py-12 sm:py-14">
         <div className="mx-auto max-w-screen-2xl px-6 sm:px-10 lg:px-16">
           <ScrollRevealGroup>
-            <ScrollRevealItem className="mb-12">
+            <ScrollRevealItem className="mb-7">
               <div>
                 <p className="section-eyebrow">05 / Experience</p>
                 <h2 className="section-heading mt-4">
-                  Career Experience
+                  <RollingTitle>Career Experience</RollingTitle>
                 </h2>
               </div>
             </ScrollRevealItem>
 
-            <div className="space-y-14">
+            <div className="space-y-8">
               <section>
                 <ScrollRevealItem className="mb-6">
                   <h3 className="mono-label text-[color:var(--portfolio-muted)]">Industry Roles</h3>
@@ -307,19 +308,19 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="skills" className="border-t border-[color:var(--portfolio-border)] bg-transparent py-20">
+      <section id="skills" className="border-t border-[color:var(--portfolio-border)] bg-transparent py-12 sm:py-14">
         <div className="mx-auto max-w-screen-2xl px-6 sm:px-10 lg:px-16">
           <ScrollRevealGroup>
-            <ScrollRevealItem className="mb-12">
+            <ScrollRevealItem className="mb-7">
               <div>
                 <p className="section-eyebrow">06 / Skills by Role</p>
                 <h2 className="section-heading mt-4">
-                  Skills
+                  <RollingTitle>Skills</RollingTitle>
                 </h2>
               </div>
             </ScrollRevealItem>
 
-            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
               {filteredSkillCategories.map((category) => (
                 <ScrollRevealItem key={category.category}>
                   <SkillBadgeCloud category={category} />
@@ -330,22 +331,22 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="roles" className="border-t border-[color:var(--portfolio-border)] bg-[rgba(255,253,249,0.45)] py-20">
+      <section id="roles" className="border-t border-[color:var(--portfolio-border)] bg-[rgba(255,253,249,0.45)] py-12 sm:py-14">
         <div className="mx-auto max-w-screen-2xl px-6 sm:px-10 lg:px-16">
           <ScrollRevealGroup>
-            <ScrollRevealItem className="mb-12">
+            <ScrollRevealItem className="mb-7">
               <div>
                 <p className="section-eyebrow">07 / Roles I&apos;m Targeting</p>
                 <h2 className="section-heading mt-4">
-                  Interested in product, technical product, technical program and program manager roles
+                  <RollingTitle>Interested in product, technical product, technical program and program manager roles</RollingTitle>
                 </h2>
               </div>
             </ScrollRevealItem>
 
-            <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+            <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
               {targetRoles.map((role) => (
                 <ScrollRevealItem key={role.title}>
-                  <div className="paper-card rounded-[2px] p-6">
+                  <div className="paper-card rounded-xl p-5">
                     <h3 className="text-2xl font-medium text-[color:var(--portfolio-ink)]">{role.title}</h3>
                     <p className="mt-4 text-sm leading-relaxed text-[color:var(--portfolio-muted)]">{role.body}</p>
                   </div>
@@ -356,19 +357,19 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="contact" className="border-t border-[color:var(--portfolio-border)] bg-[rgba(255,253,249,0.45)] py-20">
+      <section id="contact" className="border-t border-[color:var(--portfolio-border)] bg-[rgba(255,253,249,0.45)] py-12 sm:py-14">
         <div className="mx-auto max-w-screen-2xl px-6 sm:px-10 lg:px-16">
-          <ScrollRevealGroup className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+          <ScrollRevealGroup className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
             <ScrollRevealItem>
               <div>
                 <p className="section-eyebrow">08 / Let&apos;s Connect</p>
                 <h2 className="section-heading mt-4">
-                  Open to conversations around product, program, AI, and enterprise platform work
+                  <RollingTitle>Open to conversations around product, program, AI, and enterprise platform work</RollingTitle>
                 </h2>
               </div>
             </ScrollRevealItem>
 
-            <div className="grid gap-5 sm:grid-cols-2">
+            <div className="grid gap-4 sm:grid-cols-2">
               <ScrollRevealItem>
                 <a
                   href={`mailto:${profile.email}`}

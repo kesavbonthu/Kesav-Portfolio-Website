@@ -1,35 +1,36 @@
 "use client";
 
 import { ExternalLink, MapPin } from "lucide-react";
+import RollingTitle from "@/components/animation/RollingTitle";
 import { motion } from "framer-motion";
 import { profile } from "@/data/profile";
 import { assetPath } from "@/lib/asset-path";
 
 export default function HeroSection() {
   return (
-    <section id="top" className="relative overflow-hidden bg-[color:var(--portfolio-paper)] py-20 sm:py-28 lg:py-36">
+    <section id="top" className="relative overflow-hidden bg-[color:var(--portfolio-paper)] py-10 sm:py-14 lg:py-16">
       {/* Background gradient */}
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute right-[-8rem] top-[-10rem] h-[34rem] w-[34rem] rounded-full bg-[radial-gradient(circle,rgba(29,78,216,0.16),transparent_70%)]" />
         <div className="absolute bottom-[-12rem] left-[-8rem] h-[28rem] w-[28rem] rounded-full bg-[radial-gradient(circle,rgba(15,118,110,0.12),transparent_70%)]" />
       </div>
 
-      <div className="relative mx-auto grid max-w-screen-2xl items-center gap-10 px-6 sm:px-10 lg:grid-cols-[minmax(0,1.08fr)_minmax(300px,0.72fr)] lg:gap-16 lg:px-16">
+      <div className="relative mx-auto grid max-w-screen-2xl items-center gap-7 px-6 sm:px-10 lg:grid-cols-[minmax(0,1.08fr)_minmax(300px,0.72fr)] lg:gap-10 lg:px-16">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.65 }}
         >
-          <p className="section-eyebrow mb-5 flex items-center gap-2">
+          <p className="section-eyebrow mb-3 flex items-center gap-2">
             <MapPin className="h-4 w-4" />
             {profile.location}
           </p>
 
-          <h1 className="max-w-4xl text-4xl font-light tracking-tight text-[color:var(--portfolio-ink)] sm:text-5xl lg:text-6xl xl:text-[4.75rem]">
-            Product and Program Manager building AI, financial services, and enterprise workflow solutions
+          <h1 className="max-w-4xl text-4xl font-light tracking-tight text-[color:var(--portfolio-ink)] sm:text-5xl lg:text-[3.25rem] xl:text-[3.5rem]">
+            <RollingTitle>Product and Program Manager building AI, financial services, and enterprise workflow solutions</RollingTitle>
           </h1>
 
-          <p className="mt-6 max-w-3xl text-base leading-relaxed text-[color:var(--portfolio-muted)] sm:text-lg lg:max-w-2xl">
+          <p className="mt-4 max-w-3xl text-base leading-relaxed text-[color:var(--portfolio-muted)] sm:text-lg lg:max-w-2xl">
             Recent MBA graduate at UW Foster with 6+ years of experience across product management,
             technical program execution, and software engineering. I specialize in building
             data-driven products, managing complex cross-functional initiatives, and turning technical
@@ -37,7 +38,7 @@ export default function HeroSection() {
           </p>
 
           {/* Credential badges */}
-          <div className="mt-8 flex max-w-3xl flex-wrap gap-2.5">
+          <div className="mt-5 flex max-w-3xl flex-wrap gap-2.5">
             {profile.credentials.map((cred) => (
               <span
                 key={cred}
@@ -48,7 +49,7 @@ export default function HeroSection() {
             ))}
           </div>
 
-          <div className="mt-10 flex flex-wrap gap-4">
+          <div className="mt-6 flex flex-wrap gap-4">
             <a
               href={profile.linkedin}
               className="mono-label flex items-center gap-2 rounded-sm border border-[color:var(--portfolio-border)] bg-[rgba(255,253,249,0.72)] px-7 py-3.5 text-[color:var(--portfolio-ink)] transition-colors hover:border-[color:var(--portfolio-accent)] hover:text-[color:var(--portfolio-accent)]"
@@ -63,7 +64,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.15 }}
-          className="mx-auto w-full max-w-[26rem]"
+          className="mx-auto w-full max-w-[21rem]"
         >
           <div className="paper-card overflow-hidden rounded-[2px] p-3 sm:p-4">
             <div className="aspect-[4/4.85] overflow-hidden rounded-[2px] bg-[color:var(--portfolio-cream)] sm:aspect-[4/4.7]">
