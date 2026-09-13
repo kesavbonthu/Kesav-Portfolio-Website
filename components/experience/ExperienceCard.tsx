@@ -1,3 +1,4 @@
+import ExpandableExperience from "@/components/experience/ExpandableExperience";
 import { Badge } from "@/components/ui/badge";
 import { assetPath } from "@/lib/asset-path";
 import { type Experience } from "@/data/experience";
@@ -46,54 +47,56 @@ export default function ExperienceCard({ exp }: ExperienceCardProps) {
           </div>
         </div>
 
-        {exp.type !== "education" && (
+        {exp.summary && (
           <p className="mt-4 text-base leading-relaxed text-[color:var(--portfolio-muted)]">{exp.summary}</p>
         )}
 
-        {exp.highlights.length > 0 && (
-          exp.type === "education" ? (
-            <div className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-[color:var(--portfolio-muted)]">
-              {exp.highlights.map((h, i) => (
-                <div key={i} className="flex items-center gap-2">
-                  <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[color:var(--portfolio-highlight)]" />
-                  <span>{h}</span>
+        <ExpandableExperience label={`${exp.role} at ${exp.company}`}>
+          {exp.highlights.length > 0 && (
+            exp.type === "education" ? (
+              <div className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-[color:var(--portfolio-muted)]">
+                {exp.highlights.map((h, i) => (
+                  <div key={i} className="flex items-center gap-2">
+                    <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[color:var(--portfolio-highlight)]" />
+                    <span>{h}</span>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <ul className="mt-4 space-y-2">
+                {exp.highlights.map((h, i) => (
+                  <li key={i} className="flex items-start gap-2.5 text-sm text-[color:var(--portfolio-muted)]">
+                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[color:var(--portfolio-highlight)]" />
+                    {h}
+                  </li>
+                ))}
+              </ul>
+            )
+          )}
+
+          {exp.metrics.length > 0 && (
+            <div className="mt-4 flex flex-wrap gap-6 border-t border-[color:var(--portfolio-border)] pt-4">
+              {exp.metrics.map((m, i) => (
+                <div key={i} className="text-center">
+                  <div className="text-2xl font-semibold text-[color:var(--portfolio-accent)]">{m.value}</div>
+                  <div className="mono-label mt-1 text-[color:var(--portfolio-muted)]">{m.label}</div>
                 </div>
               ))}
             </div>
-          ) : (
-            <ul className="mt-4 space-y-2">
-              {exp.highlights.map((h, i) => (
-                <li key={i} className="flex items-start gap-2.5 text-sm text-[color:var(--portfolio-muted)]">
-                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[color:var(--portfolio-highlight)]" />
-                  {h}
-                </li>
-              ))}
-            </ul>
-          )
-        )}
+          )}
 
-        {exp.metrics.length > 0 && (
-          <div className="mt-4 flex flex-wrap gap-6 border-t border-[color:var(--portfolio-border)] pt-4">
-            {exp.metrics.map((m, i) => (
-              <div key={i} className="text-center">
-                <div className="text-2xl font-semibold text-[color:var(--portfolio-accent)]">{m.value}</div>
-                <div className="mono-label mt-1 text-[color:var(--portfolio-muted)]">{m.label}</div>
-              </div>
+          <div className="mt-4 flex flex-wrap gap-2">
+            {exp.skills.map((skill) => (
+              <Badge
+                key={skill}
+                variant="secondary"
+                className="border-0 bg-[color:var(--portfolio-cream)] text-xs text-[color:var(--portfolio-deep)]"
+              >
+                {skill}
+              </Badge>
             ))}
           </div>
-        )}
-
-        <div className="mt-4 flex flex-wrap gap-2">
-          {exp.skills.map((skill) => (
-            <Badge
-              key={skill}
-              variant="secondary"
-              className="border-0 bg-[color:var(--portfolio-cream)] text-xs text-[color:var(--portfolio-deep)]"
-            >
-              {skill}
-            </Badge>
-          ))}
-        </div>
+        </ExpandableExperience>
       </div>
     </div>
   );

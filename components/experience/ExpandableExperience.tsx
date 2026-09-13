@@ -1,24 +1,26 @@
 "use client";
 
-import { useState, type ReactNode } from "react";
-import { ChevronDown } from "lucide-react";
+import { useId, useState, type ReactNode } from "react";
+import { Minus, Plus } from "lucide-react";
 
-export default function ExpandableExperience({ children }: { children: ReactNode }) {
+export default function ExpandableExperience({ children, label }: { children: ReactNode; label: string }) {
   const [open, setOpen] = useState(false);
+  const detailsId = useId();
 
   return (
     <div>
       <button
         type="button"
         aria-expanded={open}
-        aria-controls="career-experience-details"
+        aria-controls={detailsId}
+        aria-label={`${open ? "Hide" : "Show"} highlights for ${label}`}
         onClick={() => setOpen((value) => !value)}
-        className="mb-2 flex min-h-11 items-center gap-3 rounded-lg border border-[color:var(--portfolio-border)] bg-[color:var(--portfolio-panel)] px-4 py-3 text-sm font-semibold text-[color:var(--portfolio-accent)] hover:bg-[color:var(--portfolio-accent-soft)]"
+        className="mt-3 flex min-h-11 items-center gap-2 rounded-lg border border-[color:var(--portfolio-border)] bg-[color:var(--portfolio-panel)] px-3 py-2 text-sm font-semibold text-[color:var(--portfolio-accent)] hover:bg-[color:var(--portfolio-accent-soft)]"
       >
-        {open ? "Hide career experience" : "View career experience"}
-        <ChevronDown aria-hidden="true" className={`h-4 w-4 transition-transform duration-200 ${open ? "rotate-180" : ""}`} />
+        {open ? <Minus aria-hidden="true" className="h-5 w-5" /> : <Plus aria-hidden="true" className="h-5 w-5" />}
+        {open ? "Hide highlights" : "Show highlights"}
       </button>
-      <div id="career-experience-details" hidden={!open} className="pt-6">
+      <div id={detailsId} hidden={!open}>
         {children}
       </div>
     </div>
