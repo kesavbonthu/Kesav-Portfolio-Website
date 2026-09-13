@@ -15,10 +15,9 @@ export default function ExpandableExperience({ children, label }: { children: Re
         aria-controls={detailsId}
         aria-label={`${open ? "Hide" : "Show"} highlights for ${label}`}
         onClick={() => setOpen((value) => !value)}
-        className="mt-3 flex min-h-11 items-center gap-2 rounded-lg border border-[color:var(--portfolio-border)] bg-[color:var(--portfolio-panel)] px-3 py-2 text-sm font-semibold text-[color:var(--portfolio-accent)] hover:bg-[color:var(--portfolio-accent-soft)]"
+        className="mt-3 flex h-11 w-11 items-center justify-center rounded-lg border border-[color:var(--portfolio-border)] bg-[color:var(--portfolio-panel)] text-[color:var(--portfolio-accent)] hover:bg-[color:var(--portfolio-accent-soft)]"
       >
         {open ? <Minus aria-hidden="true" className="h-5 w-5" /> : <Plus aria-hidden="true" className="h-5 w-5" />}
-        {open ? "Hide highlights" : "Show highlights"}
       </button>
       <div id={detailsId} hidden={!open}>
         {children}
