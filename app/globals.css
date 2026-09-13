@@ -333,7 +333,7 @@ button { cursor: pointer; }
 .skill-chip:hover { border-color: var(--portfolio-accent); background: var(--portfolio-accent-soft); }
 #contact { background: radial-gradient(ellipse at bottom left, color-mix(in srgb, var(--portfolio-accent) 10%, transparent), transparent 65%), var(--portfolio-surface); }
 [hidden] { display: none !important; }
-@media (min-width: 1280px) { .desktop-nav { display: flex; } .nav-actions > .xl\:hidden { display: none; } }
+@media (min-width: 1280px) { .mobile-nav { display: none; } .desktop-nav { display: flex; } .nav-actions > .xl\:hidden { display: none; } }
 @media (max-width: 639px) {
   .nav-inner { min-height: 68px; padding: 10px 20px; }
   .hero-title { font-size: 2.3rem; }
