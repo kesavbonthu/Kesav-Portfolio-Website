@@ -5,7 +5,7 @@ import { Moon, Sun } from "lucide-react";
 export default function ThemeToggle() {
   function toggle() {
     const dark = document.documentElement.classList.toggle("dark");
-    try { localStorage.setItem("portfolio-theme", dark ? "dark" : "light"); } catch {}
+    try { localStorage.setItem("portfolio-theme-v2", dark ? "dark" : "light"); } catch {}
   }
   return (
     <button type="button" className="theme-toggle" onClick={toggle} aria-label="Toggle light or dark theme">

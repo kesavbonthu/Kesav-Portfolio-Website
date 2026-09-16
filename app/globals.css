@@ -349,3 +349,40 @@ button { cursor: pointer; }
   .role-text { animation: none; }
   .hero-section [style], main [style*="opacity"] { opacity: 1 !important; transform: none !important; }
 }
+
+/* Light-first palette: lavender, mint, peach, and sky. */
+:root:not(.dark) {
+  --portfolio-paper: #fffdfb;
+  --portfolio-surface: #f6f3ff;
+  --portfolio-border: #e4dcef;
+  --portfolio-accent: #7240bc;
+  --portfolio-accent-soft: #f0e4ff;
+  --portfolio-highlight: #176b62;
+  --portfolio-muted: #625d70;
+  --portfolio-ink: #272034;
+}
+:root:not(.dark) .hero-ambient {
+  background: radial-gradient(ellipse at 90% 20%, #e3d1ff 0, transparent 52%), radial-gradient(ellipse at 8% 65%, #d7f4e9 0, transparent 45%), linear-gradient(120deg, #fffaf4, #fff9fd);
+}
+:root:not(.dark) .brand-mark { background: linear-gradient(135deg, #7842bd, #b33277); color: #fff; }
+:root:not(.dark) .portrait-frame { background: linear-gradient(145deg, #fff, #f2e5ff 65%, #dff7ed); }
+:root:not(.dark) #about { background: linear-gradient(140deg, #fffdfb, #eefaf4); }
+:root:not(.dark) #projects { background: linear-gradient(155deg, #fbf5ff, #f2f8ff); }
+:root:not(.dark) #ai-projects { background: linear-gradient(130deg, #eaf8f4, #f1f8ff); }
+:root:not(.dark) #consulting { background: linear-gradient(145deg, #fff7eb, #fff1f5); }
+:root:not(.dark) #experience { background: linear-gradient(145deg, #faf7ff, #fffdfb); }
+:root:not(.dark) #skills { background: linear-gradient(145deg, #eef8ff, #f3f1ff); }
+:root:not(.dark) #roles { background: linear-gradient(145deg, #fff7ed, #fff5fa); }
+:root:not(.dark) #contact { background: linear-gradient(120deg, #efe3ff, #e3f6f0 65%, #fff3e6); }
+:root:not(.dark) .project-detail { background: radial-gradient(ellipse at top right, #e8daff, transparent 45%), linear-gradient(145deg, #fffdfb, #effaf6); }
+:root:not(.dark) .project-detail > div > .space-y-10 > section { background: rgba(255,255,255,.8); border: 1px solid var(--portfolio-border); border-radius: 20px; padding: clamp(20px, 3vw, 32px); }
+:root:not(.dark) .metric-stat:nth-child(3n+1) { background: linear-gradient(135deg, #f1e7ff, #fbf7ff); border-color: #dcc8f3; }
+:root:not(.dark) .metric-stat:nth-child(3n+2) { background: linear-gradient(135deg, #dbf4e9, #f0fbf6); border-color: #bddfce; }
+:root:not(.dark) .metric-stat:nth-child(3n) { background: linear-gradient(135deg, #ffe7d4, #fff7ee); border-color: #efd2b7; }
+:root:not(.dark) .metric-stat:nth-child(3n+2) > svg { color: #176b62; }
+:root:not(.dark) .metric-stat:nth-child(3n) > svg { color: #a14c14; }
+:root:not(.dark) .project-card::before { height: 4px; background: linear-gradient(90deg, #a057d5, #ef9b82, #65bca6); opacity: 1; }
+:root:not(.dark) .skill-chip:nth-child(3n+1) { background: #f0e6fc; border-color: #decdf1; }
+:root:not(.dark) .skill-chip:nth-child(3n+2) { background: #e2f4ed; border-color: #c4e3d7; }
+:root:not(.dark) .skill-chip:nth-child(3n) { background: #fff0df; border-color: #ecd6ba; }
+:root:not(.dark) .timeline-marker { background: #eadcfb; border-color: #d4b6ef; }

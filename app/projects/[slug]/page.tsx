@@ -31,7 +31,7 @@ export default async function ProjectDetailPage({ params }: Props) {
   if (!project) notFound();
 
   return (
-    <div className="bg-[color:var(--portfolio-paper)] py-12">
+    <div className="project-detail bg-[color:var(--portfolio-paper)] py-12">
       <div className="mx-auto max-w-screen-2xl px-6 sm:px-10 lg:px-16">
         {/* Back */}
         <Link

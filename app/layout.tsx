@@ -45,7 +45,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={geist.variable} suppressHydrationWarning>
       <head>
-        <script dangerouslySetInnerHTML={{ __html: `(function(){try{var theme=localStorage.getItem("portfolio-theme");document.documentElement.classList.toggle("dark",theme==="dark"||(!theme&&matchMedia("(prefers-color-scheme: dark)").matches));}catch(e){}})();` }} />
+        <script dangerouslySetInnerHTML={{ __html: `(function(){try{var theme=localStorage.getItem("portfolio-theme-v2");document.documentElement.classList.toggle("dark",theme==="dark");}catch(e){}})();` }} />
       </head>
       <body className="portfolio-shell min-h-screen flex flex-col antialiased font-sans">
         <a className="skip-link" href="#main-content">Skip to content</a>
