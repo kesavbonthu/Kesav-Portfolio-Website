@@ -139,7 +139,7 @@ export const experiences: Experience[] = [
   },
   {
     company: "Microsoft",
-    role: "MBA Consultant",
+    role: "Operations Strategy, MBA Consultant",
     startDate: "Mar 2026",
     endDate: "Jun 2026",
     location: "Seattle, WA",
@@ -165,7 +165,7 @@ export const experiences: Experience[] = [
   },
   {
     company: "Amazon Business",
-    role: "MBA Consultant",
+    role: "Product & Growth Strategy, MBA Consultant",
     startDate: "Jan 2026",
     endDate: "Mar 2026",
     location: "Seattle, WA",

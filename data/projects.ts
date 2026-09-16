@@ -345,7 +345,7 @@ export const projects: Project[] = [
       "Sales BOM creation was inconsistent across teams, review cycles were slow, templates were fragmented, and ownership across seller roles needed clearer structure. This led to rework, delayed deal progression, and inconsistent customer proposals.",
     users: ["Microsoft sales teams", "Sales engineers", "Solution architects", "Sales operations"],
     role:
-      "MBA Consultant — led analysis, developed recommendations, designed governance framework, and delivered executive presentation.",
+      "Operations Strategy, MBA Consultant — led analysis, developed recommendations, designed governance framework, and delivered executive presentation.",
     approach: [
       "Conducted stakeholder interviews with sellers, managers, and operations teams",
       "Audited existing BOM templates and creation workflows across teams",
@@ -394,7 +394,7 @@ export const projects: Project[] = [
       "SMB customers in Mexico include banked, underbanked, and cash-first segments with different payment preferences and adoption barriers. Amazon Business needed a payment strategy that could support acquisition and retention across these diverse segments.",
     users: ["Amazon Business Mexico SMB customers", "Payment product team", "B2B commerce leadership"],
     role:
-      "MBA Consultant — led market research, customer segmentation analysis, payment rail evaluation, and strategic recommendations.",
+      "Product & Growth Strategy, MBA Consultant — led market research, customer segmentation analysis, payment rail evaluation, and strategic recommendations.",
     approach: [
       "Sized the Mexico B2B payments market across SMB segments",
       "Mapped payment rail options: cards, bank transfer, cash vouchers, embedded finance",
