@@ -11,7 +11,6 @@ const navLinks = [
   { href: "#about", label: "Approach" },
   { href: "#projects", label: "Case Studies" },
   { href: "#ai-projects", label: "AI Projects" },
-  { href: "#consulting", label: "Consulting" },
   { href: "#experience", label: "Experience" },
   { href: "#skills", label: "Skills" },
   { href: "#contact", label: "Contact" },

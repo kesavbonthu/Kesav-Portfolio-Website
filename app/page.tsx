@@ -52,7 +52,6 @@ function CompactProject({ project }: { project: Project }) {
 export default function Home() {
   const featured = selectProjects(["endomd-ai-triage", "citi-trading-platform", "dynamic-revenue-dashboard"]);
   const aiProjects = selectProjects(["joblens-ai", "ai-inbox-task-list"]);
-  const consulting = selectProjects(["microsoft-sales-bom", "amazon-payments-strategy"]);
   const skills = skillCategories.filter(({ category }) => ["Product Management", "AI / LLM / Agentic AI", "Technical"].includes(category))
     .map((category) => ({ ...category, skills: category.skills.slice(0, 6) }));
 
@@ -79,18 +78,13 @@ export default function Home() {
           {aiProjects.map((project) => <ScrollRevealItem key={project.slug}><CompactProject project={project} /></ScrollRevealItem>)}
         </div>
       </Section>
-      <Section id="consulting" eyebrow="04 / MBA consulting" title="Strategy grounded in customer needs">
-        <div className="grid gap-4 md:grid-cols-2">
-          {consulting.map((project) => <ScrollRevealItem key={project.slug}><CompactProject project={project} /></ScrollRevealItem>)}
-        </div>
-      </Section>
-      <Section id="experience" eyebrow="05 / Experience" title="Product ownership. Engineering depth.">
+      <Section id="experience" eyebrow="04 / Experience" title="Product ownership. Engineering depth.">
         {experiences.filter((experience) => experience.type === "full-time").map((experience) => <ScrollRevealItem key={`${experience.company}-${experience.role}`}><ExperienceCard exp={experience} /></ScrollRevealItem>)}
       </Section>
-      <Section id="skills" eyebrow="06 / Toolkit" title="Skills behind the work">
+      <Section id="skills" eyebrow="05 / Toolkit" title="Skills behind the work">
         <SkillsExplorer categories={skills} />
       </Section>
-      <Section id="contact" eyebrow="07 / Let’s connect" title="Let’s build a product that matters.">
+      <Section id="contact" eyebrow="06 / Let’s connect" title="Let’s build a product that matters.">
         <div id="roles" className="mb-5 max-w-2xl text-[color:var(--portfolio-muted)]">
           <p>Seeking Product Manager roles in AI, fintech, and enterprise software.</p>
           <p className="mt-2 text-sm">{profile.location} · Open to relocation within the US, on-site, hybrid, and remote work.</p>
