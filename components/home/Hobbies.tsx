@@ -66,15 +66,31 @@ export default function Hobbies() {
       {photo && (
         <div ref={gallery} role="region" aria-roledescription="carousel" aria-label="Photography" className="mt-6 overflow-hidden rounded-2xl border border-[color:var(--portfolio-border)] bg-[color:var(--portfolio-panel)]"
           onFocusCapture={() => setInteracting(true)} onBlurCapture={(event) => { if (!event.currentTarget.contains(event.relatedTarget)) setInteracting(false); }}>
-          <div className="relative h-[360px] bg-[#090d14] sm:h-[480px]">
+          <div className="relative h-[340px] overflow-hidden bg-[#090d14] sm:h-[460px]">
             <AnimatePresence initial={false}>
-              <motion.button key={photo.src} type="button" onClick={() => openPhoto(photo)}
-                initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: reducedMotion ? 0 : 1.8, ease: "easeInOut" }}
-                aria-label={`Enlarge photo: ${photo.caption}`} className="absolute inset-0 h-full w-full cursor-zoom-in focus-visible:outline-2 focus-visible:outline-offset-[-4px] focus-visible:outline-white">
-                <img src={assetPath(photo.src)} alt={photo.alt} width={photo.width} height={photo.height} loading="lazy" decoding="async" className="h-full w-full object-contain" />
-              </motion.button>
+              {[-2, -1, 0, 1, 2].map((offset) => {
+                const item = hobbyPhotos[(active + offset + hobbyPhotos.length) % hobbyPhotos.length];
+                const centered = offset === 0;
+                return (
+                  <motion.div key={item.src}
+                    initial={{ x: `${offset * 100}%`, scale: 0.9, opacity: 0 }}
+                    animate={{ x: `${offset * 100}%`, scale: centered ? 1 : 0.9, opacity: centered ? 1 : 0.45 }}
+                    exit={{ x: "-324%", scale: 0.9, opacity: 0 }}
+                    transition={{ duration: reducedMotion ? 0 : 1.25, ease: [0.22, 1, 0.36, 1] }}
+                    aria-hidden={!centered}
+                    className="absolute inset-y-6 left-[18%] w-[64%] overflow-hidden rounded-xl border border-white/10 bg-[#111722] shadow-2xl sm:inset-y-8">
+                    <img src={assetPath(item.src)} alt="" aria-hidden="true" width={item.width} height={item.height} loading="lazy" decoding="async" className="pointer-events-none absolute inset-0 h-full w-full scale-110 object-cover opacity-20 blur-xl" />
+                    <button type="button" tabIndex={centered ? 0 : -1} disabled={!centered} onClick={() => openPhoto(item)}
+                      aria-label={`Enlarge photo: ${item.caption}`} className="relative h-full w-full cursor-zoom-in focus-visible:outline-2 focus-visible:outline-offset-[-4px] focus-visible:outline-white disabled:cursor-default">
+                      <img src={assetPath(item.src)} alt={centered ? item.alt : ""} width={item.width} height={item.height} loading="lazy" decoding="async" className={`h-full w-full ${centered ? "object-contain" : "object-cover"}`} />
+                      {centered && <span aria-hidden="true" className="pointer-events-none absolute right-3 top-3 rounded-full bg-black/60 p-2 text-white"><Maximize2 size={16} /></span>}
+                    </button>
+                  </motion.div>
+                );
+              })}
             </AnimatePresence>
-            <span aria-hidden="true" className="pointer-events-none absolute right-4 top-4 rounded-full bg-black/60 p-2 text-white"><Maximize2 size={16} /></span>
+            <div aria-hidden="true" className="pointer-events-none absolute inset-y-0 left-0 w-[5%] bg-gradient-to-r from-[#090d14] to-transparent" />
+            <div aria-hidden="true" className="pointer-events-none absolute inset-y-0 right-0 w-[5%] bg-gradient-to-l from-[#090d14] to-transparent" />
           </div>
           <div className="flex items-center justify-between gap-3 px-4 py-4 sm:px-6">
             <div aria-live={playing ? "off" : "polite"} aria-atomic="true" className="min-w-0">
