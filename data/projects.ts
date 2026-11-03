@@ -59,7 +59,7 @@ export const projects: Project[] = [
   {
     slug: "joblens-ai",
     appUrl: "https://signal-jobs-kesav.kesavb.chatgpt.site/",
-    title: "JobLens AI",
+    title: "Signal",
     subtitle: "AI-powered job application intelligence platform",
     categories: ["AI", "Personal Projects"],
     timeframe: "2024",
@@ -160,7 +160,7 @@ export const projects: Project[] = [
   {
     slug: "ai-inbox-task-list",
     appUrl: "https://inbox-assistant-kesav.kesavb.chatgpt.site/",
-    title: "AI Inbox Task List",
+    title: "Inboxly",
     subtitle: "Agentic email-to-task workflow powered by Gmail API and LLM analysis",
     categories: ["AI", "Personal Projects"],
     timeframe: "2024",
