@@ -1,15 +1,12 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
-import { ArrowUpRight, ExternalLink, GitFork, Mail } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import HeroSection from "@/components/home/HeroSection";
 import { ScrollRevealGroup, ScrollRevealItem } from "@/components/animation/ScrollReveal";
 import ExperienceCard from "@/components/experience/ExperienceCard";
 import ProjectCard from "@/components/projects/ProjectCard";
-import SkillsExplorer from "@/components/skills/SkillsExplorer";
 import { experiences } from "@/data/experience";
-import { profile } from "@/data/profile";
 import { projects, type Project } from "@/data/projects";
-import { skillCategories } from "@/data/skills";
 
 function selectProjects(slugs: string[]) {
   return slugs.map((slug) => projects.find((project) => project.slug === slug))
@@ -52,8 +49,7 @@ function CompactProject({ project }: { project: Project }) {
 export default function Home() {
   const featured = selectProjects(["endomd-ai-triage", "citi-trading-platform", "dynamic-revenue-dashboard"]);
   const aiProjects = selectProjects(["joblens-ai", "ai-inbox-task-list"]);
-  const skills = skillCategories.filter(({ category }) => ["Product Management", "AI / LLM / Agentic AI", "Technical"].includes(category))
-    .map((category) => ({ ...category, skills: category.skills.slice(0, 6) }));
+
 
   return (
     <>
@@ -81,20 +77,7 @@ export default function Home() {
       <Section id="experience" eyebrow="04 / Experience" title="Product ownership. Engineering depth.">
         {experiences.filter((experience) => experience.type === "full-time").map((experience) => <ScrollRevealItem key={`${experience.company}-${experience.role}`}><ExperienceCard exp={experience} /></ScrollRevealItem>)}
       </Section>
-      <Section id="skills" eyebrow="05 / Toolkit" title="Skills behind the work">
-        <SkillsExplorer categories={skills} />
-      </Section>
-      <Section id="contact" eyebrow="06 / Let’s connect" title="Let’s build a product that matters.">
-        <div id="roles" className="mb-5 max-w-2xl text-[color:var(--portfolio-muted)]">
-          <p>Seeking Product Manager roles in AI, fintech, and enterprise software.</p>
-          <p className="mt-2 text-sm">{profile.location} · Open to relocation within the US, on-site, hybrid, and remote work.</p>
-        </div>
-        <div className="flex flex-wrap gap-3">
-          <a href={`mailto:${profile.email}`} className="paper-card inline-flex items-center gap-2 px-5 py-3 text-sm"><Mail size={16} />{profile.email}</a>
-          <a href={profile.linkedin} className="paper-card inline-flex items-center gap-2 px-5 py-3 text-sm"><ExternalLink size={16} />LinkedIn</a>
-          <a href={profile.github} className="paper-card inline-flex items-center gap-2 px-5 py-3 text-sm"><GitFork size={16} />GitHub</a>
-        </div>
-      </Section>
+
     </>
   );
 }

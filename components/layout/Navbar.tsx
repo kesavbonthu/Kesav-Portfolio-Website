@@ -12,8 +12,6 @@ const navLinks = [
   { href: "#projects", label: "Case Studies" },
   { href: "#ai-projects", label: "AI Projects" },
   { href: "#experience", label: "Experience" },
-  { href: "#skills", label: "Skills" },
-  { href: "#contact", label: "Contact" },
 ];
 
 export default function Navbar() {
@@ -49,9 +47,7 @@ export default function Navbar() {
       </nav>
       {open && <div id="mobile-navigation" className="mobile-nav xl:hidden">
         {navLinks.map((link) => <Link key={link.href} href={`/${link.href}`} aria-current={active === link.href ? "location" : undefined} onClick={() => setOpen(false)}>{link.label}</Link>)}
-        <Link href="/#contact" className="connect-link" onClick={() => setOpen(false)}>Let&apos;s Connect</Link>
       </div>}
-      <Link href="/#contact" className="sr-only focus:not-sr-only">Let&apos;s Connect</Link>
     </header>
   );
 }
