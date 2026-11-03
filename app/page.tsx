@@ -1,5 +1,4 @@
 import RollingTitle from "@/components/animation/RollingTitle";
-import ImpactHighlights from "@/components/home/ImpactHighlights";
 import HeroSection from "@/components/home/HeroSection";
 import { ScrollRevealGroup, ScrollRevealItem } from "@/components/animation/ScrollReveal";
 import ExperienceCard from "@/components/experience/ExperienceCard";
@@ -84,7 +83,6 @@ export default function Home() {
   return (
     <>
       <HeroSection />
-      <ImpactHighlights />
 
       <section id="about" className="border-t border-[color:var(--portfolio-border)] bg-transparent py-16 sm:py-20">
         <div className="mx-auto max-w-screen-2xl px-6 sm:px-10 lg:px-16">
