@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Hobbies from "@/components/home/Hobbies";
 import { assetPath } from "@/lib/asset-path";
 import { GitFork, ExternalLink, Mail, MapPin } from "lucide-react";
 import { profile } from "@/data/profile";
@@ -33,6 +34,8 @@ export default function Footer() {
             <p className="text-sm font-medium text-[color:var(--portfolio-ink)]">BE, IIT Madras</p>
           </div>
         </div>
+
+        <Hobbies />
 
         <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
           <div>
