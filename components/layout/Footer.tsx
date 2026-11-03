@@ -7,7 +7,7 @@ export default function Footer() {
   return (
     <footer className="border-t border-[color:var(--portfolio-border)] bg-[color:var(--portfolio-surface)]">
       <div className="mx-auto max-w-screen-2xl px-6 py-10 sm:px-10 lg:px-16">
-        <p className="mono-label mb-4 text-[color:var(--portfolio-muted)]">Academic Affiliation</p>
+        <p className="mono-label mb-4 text-[color:var(--portfolio-muted)]">Education</p>
         <div className="mb-8 grid gap-4 border-b border-[color:var(--portfolio-border)] pb-8 sm:grid-cols-2">
           <div className="paper-card flex items-center gap-4 rounded-[2px] p-4">
             <img
@@ -18,10 +18,7 @@ export default function Footer() {
               alt="University of Washington logo"
               className="h-12 w-12 rounded-sm object-contain"
             />
-            <div>
-              <p className="mono-label text-[color:var(--portfolio-muted)]">MBA</p>
-              <p className="text-sm font-medium text-[color:var(--portfolio-ink)]">UW Foster School of Business</p>
-            </div>
+            <p className="text-sm font-medium text-[color:var(--portfolio-ink)]">MBA, UW Foster</p>
           </div>
 
           <div className="paper-card flex items-center gap-4 rounded-[2px] p-4">
@@ -33,10 +30,7 @@ export default function Footer() {
               alt="IIT Madras logo"
               className="h-12 w-12 rounded-sm object-contain"
             />
-            <div>
-              <p className="mono-label text-[color:var(--portfolio-muted)]">Bachelors of Engineering</p>
-              <p className="text-sm font-medium text-[color:var(--portfolio-ink)]">IIT Madras</p>
-            </div>
+            <p className="text-sm font-medium text-[color:var(--portfolio-ink)]">BE, IIT Madras</p>
           </div>
         </div>
 
