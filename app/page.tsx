@@ -47,7 +47,7 @@ function CompactProject({ project }: { project: Project }) {
 }
 
 export default function Home() {
-  const featured = selectProjects(["endomd-ai-triage", "citi-trading-platform", "dynamic-revenue-dashboard"]);
+  const featured = selectProjects(["endomd-ai-triage", "citi-trading-platform", "dynamic-revenue-dashboard", "automated-ci-cd-pipeline"]);
   const aiProjects = selectProjects(["joblens-ai", "ai-inbox-task-list"]);
 
 
@@ -65,7 +65,7 @@ export default function Home() {
         </div>
       </Section>
       <Section id="projects" eyebrow="02 / Selected work" title="Products with measurable impact">
-        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+        <div className="grid gap-4 md:grid-cols-2">
           {featured.map((project) => <ScrollRevealItem key={project.slug}><ProjectCard project={project} /></ScrollRevealItem>)}
         </div>
       </Section>

@@ -21,6 +21,41 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    slug: "automated-ci-cd-pipeline",
+    title: "Automated CI/CD Pipeline",
+    subtitle: "Faster software delivery through release workflow automation",
+    categories: ["FinTech", "Product Management"],
+    company: "Citibank",
+    timeframe: "2020–2022",
+    featured: true,
+    summary:
+      "Improved CI/CD workflows, release readiness, and engineering handoffs to cut release cycle times by 50% and save 1,000+ developer hours annually.",
+    problem:
+      "Release workflows and engineering handoffs consumed developer time and slowed delivery of improvements to internal platforms.",
+    users: ["Engineering teams", "Internal platform teams"],
+    role:
+      "Senior Software Engineer — improved CI/CD workflows, deployment readiness, and engineering handoffs for internal platforms.",
+    approach: [
+      "Focused on release workflow efficiency and developer time.",
+      "Improved CI/CD workflows alongside deployment readiness and engineering handoffs.",
+      "Measured the impact through release cycle times and developer hours saved.",
+    ],
+    solution: [
+      "Automated CI/CD workflows supporting more efficient software releases.",
+      "Improved deployment readiness and handoffs across delivery teams.",
+    ],
+    impact: [
+      "Reduced release cycle times by 50%.",
+      "Saved 1,000+ developer hours annually across delivery teams.",
+    ],
+    metrics: [
+      { value: "50%", label: "Shorter release cycles" },
+      { value: "1,000+", label: "Developer hours saved / year" },
+    ],
+    skills: ["CI/CD", "Release Engineering", "Workflow Automation", "Platform Reliability"],
+    tags: ["CI/CD", "Developer Experience", "Automation"],
+  },
+  {
     slug: "joblens-ai",
     title: "JobLens AI",
     subtitle: "AI-powered job application intelligence platform",
