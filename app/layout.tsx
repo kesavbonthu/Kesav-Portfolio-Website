@@ -42,9 +42,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={geist.variable} suppressHydrationWarning>
+    <html lang="en" className={`${geist.variable} dark`} suppressHydrationWarning>
       <head>
-        <script dangerouslySetInnerHTML={{ __html: `(function(){try{var theme=localStorage.getItem("portfolio-theme-v2");document.documentElement.classList.toggle("dark",theme==="dark");}catch(e){}})();` }} />
+        <script dangerouslySetInnerHTML={{ __html: `(function(){try{var theme=localStorage.getItem("portfolio-theme-v2");document.documentElement.classList.toggle("dark",theme!=="light");}catch(e){}})();` }} />
       </head>
       <body className="portfolio-shell min-h-screen flex flex-col antialiased font-sans">
         <a className="skip-link" href="#main-content">Skip to content</a>
