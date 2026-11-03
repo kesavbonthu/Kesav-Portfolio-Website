@@ -20,7 +20,6 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         )}
       </div>
 
-      <p className="mono-label mt-2 text-[color:var(--portfolio-accent)]">{project.subtitle}</p>
 
       <p className="mt-4 flex-1 text-sm leading-relaxed text-[color:var(--portfolio-muted)]">{project.summary}</p>
 

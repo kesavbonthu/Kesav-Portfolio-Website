@@ -8,13 +8,12 @@ import ThemeToggle from "./ThemeToggle";
 
 const navLinks = [
   { href: "#top", label: "Home" },
-  { href: "#about", label: "Positioning" },
+  { href: "#about", label: "Approach" },
   { href: "#projects", label: "Case Studies" },
   { href: "#ai-projects", label: "AI Projects" },
   { href: "#consulting", label: "Consulting" },
   { href: "#experience", label: "Experience" },
   { href: "#skills", label: "Skills" },
-  { href: "#roles", label: "Target Roles" },
   { href: "#contact", label: "Contact" },
 ];
 

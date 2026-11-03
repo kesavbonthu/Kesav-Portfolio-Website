@@ -8,20 +8,19 @@ const geist = Geist({ subsets: ["latin"], variable: "--font-geist", display: "sw
 
 export const metadata: Metadata = {
   title: {
-    default: "Kesav Bonthu",
+    default: "Kesav Bonthu | Product Manager",
     template: "%s | Kesav Bonthu",
   },
   description:
-    "Portfolio of Kesav Bonthu, a technical product manager with experience across financial services, healthcare AI, enterprise platforms, and AI product development.",
+    "Portfolio of Kesav Bonthu, a product manager with experience across financial services, healthcare AI, enterprise platforms, and AI product development.",
   keywords: [
     "Kesav Bonthu",
-    "Technical Product Manager",
+    "Product Manager",
     "AI Product Manager",
     "Product Manager MBA",
     "UW Foster MBA",
     "FinTech Product Manager",
     "Healthcare AI Product Manager",
-    "Technical Program Manager",
     "Product Portfolio",
     "Enterprise Product Management",
     "AI Workflow Automation",
@@ -32,7 +31,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     title: "Kesav Bonthu",
     description:
-      "Portfolio of Kesav Bonthu, a technical product manager with experience across AI, enterprise products, and financial services.",
+      "Portfolio of Kesav Bonthu, a product manager with experience across AI, enterprise products, and financial services.",
     siteName: "Kesav Bonthu Portfolio",
   },
 };

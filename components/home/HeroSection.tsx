@@ -2,7 +2,7 @@
 
 import { ExternalLink, MapPin } from "lucide-react";
 import RollingTitle from "@/components/animation/RollingTitle";
-import RotatingRole from "./RotatingRole";
+import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import { profile } from "@/data/profile";
 import { assetPath } from "@/lib/asset-path";
@@ -10,7 +10,7 @@ import { assetPath } from "@/lib/asset-path";
 export default function HeroSection() {
   const reduced = useReducedMotion();
   return (
-    <section id="top" className="hero-section relative overflow-hidden py-14 sm:py-20 lg:py-24">
+    <section id="top" className="hero-section relative overflow-hidden py-10 sm:py-14 lg:py-16">
       <div className="hero-ambient" aria-hidden="true" />
 
       <div className="relative mx-auto grid max-w-screen-2xl items-center gap-7 px-6 sm:px-10 lg:grid-cols-[minmax(0,1.08fr)_minmax(300px,0.72fr)] lg:gap-10 lg:px-16">
@@ -24,17 +24,12 @@ export default function HeroSection() {
             {profile.location}
           </p>
 
-          <RotatingRole />
-
           <h1 className="hero-title">
-            <RollingTitle>Product and Program Manager building AI, financial services, and enterprise workflow solutions</RollingTitle>
+            <RollingTitle>Product Manager building useful AI and enterprise products.</RollingTitle>
           </h1>
 
           <p className="mt-4 max-w-3xl text-base leading-relaxed text-[color:var(--portfolio-muted)] sm:text-lg lg:max-w-2xl">
-            Recent MBA graduate at UW Foster with 6+ years of experience across product management,
-            technical program execution, and software engineering. I specialize in building
-            data-driven products, managing complex cross-functional initiatives, and turning technical
-            complexity into measurable business outcomes
+            {profile.summary}
           </p>
 
           {/* Credential badges */}
@@ -49,10 +44,11 @@ export default function HeroSection() {
             ))}
           </div>
 
-          <div className="mt-6 flex flex-wrap gap-4">
+          <div className="mt-6 flex flex-wrap gap-3">
+            <Link href="/#projects" className="inline-flex items-center rounded-xl bg-[color:var(--portfolio-accent)] px-5 py-3 text-sm font-semibold text-[color:var(--portfolio-paper)]">View selected work</Link>
             <a
               href={profile.linkedin}
-              className="mono-label flex items-center gap-2 rounded-sm border border-[color:var(--portfolio-border)] bg-[color:var(--portfolio-panel)] px-7 py-3.5 text-[color:var(--portfolio-ink)] transition-colors hover:border-[color:var(--portfolio-accent)] hover:text-[color:var(--portfolio-accent)]"
+              className="mono-label flex items-center gap-2 rounded-sm border border-[color:var(--portfolio-border)] bg-[color:var(--portfolio-panel)] px-5 py-3 text-[color:var(--portfolio-ink)] transition-colors hover:border-[color:var(--portfolio-accent)] hover:text-[color:var(--portfolio-accent)]"
             >
               <ExternalLink className="h-5 w-5" />
               Connect on LinkedIn
@@ -64,7 +60,7 @@ export default function HeroSection() {
           initial={reduced ? false : { opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.15 }}
-          className="hero-portrait mx-auto w-full max-w-[24rem]"
+          className="hero-portrait mx-auto w-full max-w-[19rem]"
         >
           <div className="portrait-frame overflow-hidden p-3 sm:p-4">
             <div className="aspect-[4/4.85] overflow-hidden rounded-[2px] bg-[color:var(--portfolio-cream)] sm:aspect-[4/4.7]">
