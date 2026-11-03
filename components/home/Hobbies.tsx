@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { Camera, CookingPot, Footprints, Mountain, X, ChevronLeft, ChevronRight, Pause, Play, Maximize2 } from "lucide-react";
+import { Camera, CookingPot, Footprints, Mountain, X, Maximize2 } from "lucide-react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { hobbyPhotos, type HobbyPhoto } from "@/data/hobbies";
 import { assetPath } from "@/lib/asset-path";
@@ -19,13 +19,12 @@ export default function Hobbies() {
 
   const gallery = useRef<HTMLDivElement>(null);
   const [active, setActive] = useState(0);
-  const [paused, setPaused] = useState(false);
   const [interacting, setInteracting] = useState(false);
   const [visible, setVisible] = useState(false);
   const [pageVisible, setPageVisible] = useState(true);
   const reducedMotion = useReducedMotion();
   const photo = hobbyPhotos[active];
-  const playing = !paused && !reducedMotion;
+  const playing = !reducedMotion;
 
   useEffect(() => {
     const observer = new IntersectionObserver(([entry]) => setVisible(entry.isIntersecting), { threshold: 0.2 });
@@ -42,10 +41,11 @@ export default function Hobbies() {
     return () => window.clearInterval(timer);
   }, [playing, visible, pageVisible, interacting, selected]);
 
-  function navigate(index: number) {
-    setPaused(true);
-    setActive((index + hobbyPhotos.length) % hobbyPhotos.length);
-  }
+  useEffect(() => {
+    if (!visible || hobbyPhotos.length < 2) return;
+    const next = new Image();
+    next.src = assetPath(hobbyPhotos[(active + 1) % hobbyPhotos.length].src);
+  }, [active, visible]);
 
   function openPhoto(photo: HobbyPhoto) {
     setSelected(photo);
@@ -65,16 +65,11 @@ export default function Hobbies() {
       </ul>
       {photo && (
         <div ref={gallery} role="region" aria-roledescription="carousel" aria-label="Photography" className="mt-6 overflow-hidden rounded-2xl border border-[color:var(--portfolio-border)] bg-[color:var(--portfolio-panel)]"
-          onMouseEnter={() => setInteracting(true)} onMouseLeave={() => setInteracting(false)}
-          onFocusCapture={() => setInteracting(true)} onBlurCapture={(event) => { if (!event.currentTarget.contains(event.relatedTarget)) setInteracting(false); }}
-          onKeyDown={(event) => {
-            if (event.key === "ArrowRight") { event.preventDefault(); navigate(active + 1); }
-            if (event.key === "ArrowLeft") { event.preventDefault(); navigate(active - 1); }
-          }}>
+          onFocusCapture={() => setInteracting(true)} onBlurCapture={(event) => { if (!event.currentTarget.contains(event.relatedTarget)) setInteracting(false); }}>
           <div className="relative h-[360px] bg-[#090d14] sm:h-[480px]">
             <AnimatePresence initial={false}>
               <motion.button key={photo.src} type="button" onClick={() => openPhoto(photo)}
-                initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: reducedMotion ? 0 : 0.8 }}
+                initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: reducedMotion ? 0 : 1.8, ease: "easeInOut" }}
                 aria-label={`Enlarge photo: ${photo.caption}`} className="absolute inset-0 h-full w-full cursor-zoom-in focus-visible:outline-2 focus-visible:outline-offset-[-4px] focus-visible:outline-white">
                 <img src={assetPath(photo.src)} alt={photo.alt} width={photo.width} height={photo.height} loading="lazy" decoding="async" className="h-full w-full object-contain" />
               </motion.button>
@@ -86,19 +81,6 @@ export default function Hobbies() {
               <p className="text-sm font-medium">{photo.caption}</p>
               <p className="mt-1 text-xs text-[color:var(--portfolio-muted)]">{String(active + 1).padStart(2, "0")} / {hobbyPhotos.length} · Photography</p>
             </div>
-            <div className="flex shrink-0 gap-1">
-              <button type="button" aria-label="Previous photo" onClick={() => navigate(active - 1)} className="rounded-full border border-[color:var(--portfolio-border)] p-3 hover:bg-[color:var(--portfolio-paper)]"><ChevronLeft size={18} /></button>
-              {!reducedMotion && <button type="button" aria-label={paused ? "Play slideshow" : "Pause slideshow"} onClick={() => setPaused(!paused)} className="rounded-full border border-[color:var(--portfolio-border)] p-3 hover:bg-[color:var(--portfolio-paper)]">{paused ? <Play size={18} /> : <Pause size={18} />}</button>}
-              <button type="button" aria-label="Next photo" onClick={() => navigate(active + 1)} className="rounded-full border border-[color:var(--portfolio-border)] p-3 hover:bg-[color:var(--portfolio-paper)]"><ChevronRight size={18} /></button>
-            </div>
-          </div>
-          <div className="flex gap-2 overflow-x-auto px-4 pb-4 sm:px-6" aria-label="Choose a photo">
-            {hobbyPhotos.map((item, index) => (
-              <button key={item.src} type="button" aria-label={`Show photo ${index + 1}: ${item.caption}`} aria-pressed={index === active}
-                onClick={() => navigate(index)} className={`shrink-0 overflow-hidden rounded-lg border-2 p-0.5 transition-opacity ${index === active ? "border-violet-400 opacity-100" : "border-transparent opacity-60 hover:opacity-100"}`}>
-                <img src={assetPath(item.thumbnail)} alt="" width={80} height={60} loading="lazy" className="h-[60px] w-20 rounded object-cover" />
-              </button>
-            ))}
           </div>
         </div>
       )}
