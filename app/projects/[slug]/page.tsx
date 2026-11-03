@@ -2,7 +2,7 @@ import MetricStat from "@/components/animation/MetricStat";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { ArrowLeft, Mail } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, Mail } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { projects } from "@/data/projects";
 import { profile } from "@/data/profile";
@@ -59,6 +59,12 @@ export default async function ProjectDetailPage({ params }: Props) {
             </p>
           )}
         </div>
+
+        {project.appUrl && (
+          <a href={project.appUrl} target="_blank" rel="noopener noreferrer" aria-label={`Open ${project.title} app (opens in a new tab)`} className="mb-8 inline-flex items-center gap-2 rounded-lg bg-[color:var(--portfolio-accent)] px-5 py-3 text-sm font-semibold text-[color:var(--portfolio-paper)]">
+            Open app <ArrowUpRight size={16} aria-hidden="true" />
+          </a>
+        )}
 
         {/* Metrics */}
         {project.metrics.length > 0 && (

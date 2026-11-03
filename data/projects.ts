@@ -17,6 +17,7 @@ export interface Project {
   tags: string[];
   featured: boolean;
   lessonsLearned?: string;
+  appUrl?: string;
 }
 
 export const projects: Project[] = [
@@ -57,6 +58,7 @@ export const projects: Project[] = [
   },
   {
     slug: "joblens-ai",
+    appUrl: "https://signal-jobs-kesav.kesavb.chatgpt.site/",
     title: "JobLens AI",
     subtitle: "AI-powered job application intelligence platform",
     categories: ["AI", "Personal Projects"],
@@ -157,6 +159,7 @@ export const projects: Project[] = [
   },
   {
     slug: "ai-inbox-task-list",
+    appUrl: "https://inbox-assistant-kesav.kesavb.chatgpt.site/",
     title: "AI Inbox Task List",
     subtitle: "Agentic email-to-task workflow powered by Gmail API and LLM analysis",
     categories: ["AI", "Personal Projects"],

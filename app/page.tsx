@@ -37,12 +37,15 @@ function Section({ id, eyebrow, title, children }: { id: string; eyebrow: string
 
 function CompactProject({ project }: { project: Project }) {
   return (
-    <Link href={`/projects/${project.slug}/`} className="paper-card group flex h-full flex-col p-5">
+    <article className="paper-card group flex h-full flex-col p-5">
       {project.company && <p className="section-eyebrow">{project.company}</p>}
       <h3 className="text-xl font-semibold tracking-tight">{project.title}</h3>
       <p className="mt-3 flex-1 text-sm leading-relaxed text-[color:var(--portfolio-muted)]">{project.summary}</p>
-      <span className="mt-4 flex items-center justify-between text-xs font-semibold text-[color:var(--portfolio-accent)]">Explore case study <ArrowUpRight size={16} aria-hidden="true" /></span>
-    </Link>
+      <div className="mt-4 flex flex-wrap items-center gap-4 text-sm font-semibold text-[color:var(--portfolio-accent)]">
+        <Link href={`/projects/${project.slug}/`} className="inline-flex items-center gap-2 py-2">Explore case study <ArrowUpRight size={16} aria-hidden="true" /></Link>
+        {project.appUrl && <a href={project.appUrl} target="_blank" rel="noopener noreferrer" aria-label={`Open ${project.title} app (opens in a new tab)`} className="inline-flex items-center gap-2 rounded-lg border border-[color:var(--portfolio-border)] px-3 py-2">Open app <ArrowUpRight size={16} aria-hidden="true" /></a>}
+      </div>
+    </article>
   );
 }
 
