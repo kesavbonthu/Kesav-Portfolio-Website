@@ -1,9 +1,9 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { Camera, CookingPot, Footprints, Mountain, X, Maximize2 } from "lucide-react";
+import { Camera, CookingPot, Footprints, Mountain } from "lucide-react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
-import { hobbyPhotos, type HobbyPhoto } from "@/data/hobbies";
+import { hobbyPhotos } from "@/data/hobbies";
 import { assetPath } from "@/lib/asset-path";
 
 const hobbies = [
@@ -14,12 +14,8 @@ const hobbies = [
 ];
 
 export default function Hobbies() {
-  const dialog = useRef<HTMLDialogElement>(null);
-  const [selected, setSelected] = useState<HobbyPhoto | null>(null);
-
   const gallery = useRef<HTMLDivElement>(null);
   const [active, setActive] = useState(0);
-  const [interacting, setInteracting] = useState(false);
   const [visible, setVisible] = useState(false);
   const [pageVisible, setPageVisible] = useState(true);
   const reducedMotion = useReducedMotion();
@@ -36,21 +32,16 @@ export default function Hobbies() {
   }, []);
 
   useEffect(() => {
-    if (!playing || !visible || !pageVisible || interacting || selected || hobbyPhotos.length < 2) return;
+    if (!playing || !visible || !pageVisible || hobbyPhotos.length < 2) return;
     const timer = window.setInterval(() => setActive((index) => (index + 1) % hobbyPhotos.length), 5000);
     return () => window.clearInterval(timer);
-  }, [playing, visible, pageVisible, interacting, selected]);
+  }, [playing, visible, pageVisible]);
 
   useEffect(() => {
     if (!visible || hobbyPhotos.length < 2) return;
     const next = new Image();
     next.src = assetPath(hobbyPhotos[(active + 1) % hobbyPhotos.length].src);
   }, [active, visible]);
-
-  function openPhoto(photo: HobbyPhoto) {
-    setSelected(photo);
-    dialog.current?.showModal();
-  }
 
   return (
     <section id="hobbies" aria-labelledby="hobbies-heading" className="mb-8 border-b border-[color:var(--portfolio-border)] pb-8">
@@ -64,8 +55,7 @@ export default function Hobbies() {
         ))}
       </ul>
       {photo && (
-        <div ref={gallery} role="region" aria-roledescription="carousel" aria-label="Photography" className="mt-6 overflow-hidden rounded-2xl border border-[color:var(--portfolio-border)] bg-[color:var(--portfolio-panel)]"
-          onFocusCapture={() => setInteracting(true)} onBlurCapture={(event) => { if (!event.currentTarget.contains(event.relatedTarget)) setInteracting(false); }}>
+        <div ref={gallery} role="region" aria-roledescription="carousel" aria-label="Photography" className="mt-6 overflow-hidden rounded-2xl border border-[color:var(--portfolio-border)] bg-[color:var(--portfolio-panel)]">
           <div className="relative h-[340px] overflow-hidden bg-[#090d14] sm:h-[460px]">
             <AnimatePresence initial={false}>
               {[-2, -1, 0, 1, 2].map((offset) => {
@@ -80,11 +70,9 @@ export default function Hobbies() {
                     aria-hidden={!centered}
                     className="absolute inset-y-6 left-[18%] w-[64%] overflow-hidden rounded-xl border border-white/10 bg-[#111722] shadow-2xl sm:inset-y-8">
                     <img src={assetPath(item.src)} alt="" aria-hidden="true" width={item.width} height={item.height} loading="lazy" decoding="async" className="pointer-events-none absolute inset-0 h-full w-full scale-110 object-cover opacity-20 blur-xl" />
-                    <button type="button" tabIndex={centered ? 0 : -1} disabled={!centered} onClick={() => openPhoto(item)}
-                      aria-label={`Enlarge photo: ${item.caption}`} className="relative h-full w-full cursor-zoom-in focus-visible:outline-2 focus-visible:outline-offset-[-4px] focus-visible:outline-white disabled:cursor-default">
+                    <div className="relative h-full w-full">
                       <img src={assetPath(item.src)} alt={centered ? item.alt : ""} width={item.width} height={item.height} loading="lazy" decoding="async" className={`h-full w-full ${centered ? "object-contain" : "object-cover"}`} />
-                      {centered && <span aria-hidden="true" className="pointer-events-none absolute right-3 top-3 rounded-full bg-black/60 p-2 text-white"><Maximize2 size={16} /></span>}
-                    </button>
+                    </div>
                   </motion.div>
                 );
               })}
@@ -100,10 +88,6 @@ export default function Hobbies() {
           </div>
         </div>
       )}
-      <dialog ref={dialog} onClose={() => setSelected(null)} aria-label="Photo viewer" onClick={(event) => { if (event.target === event.currentTarget) dialog.current?.close(); }} className="fixed inset-0 m-auto max-h-[90dvh] w-[min(94vw,64rem)] overflow-auto rounded-2xl border border-[color:var(--portfolio-border)] bg-[color:var(--portfolio-paper)] p-4 text-[color:var(--portfolio-ink)] backdrop:bg-black/80">
-        <div className="mb-3 flex justify-end"><button type="button" autoFocus onClick={() => dialog.current?.close()} aria-label="Close photo" className="rounded-lg p-3 hover:bg-[color:var(--portfolio-panel)]"><X size={20} /></button></div>
-        {selected && <figure><img src={assetPath(selected.src)} alt={selected.alt} width={selected.width} height={selected.height} className="max-h-[68dvh] w-full object-contain" /><figcaption className="mt-3 text-center text-sm">{selected.caption}</figcaption></figure>}
-      </dialog>
     </section>
   );
 }
