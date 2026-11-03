@@ -130,5 +130,4 @@ export const signatureStrengths = [
   { label: "Data-driven decision-making", icon: "📊" },
   { label: "Cross-functional execution", icon: "🔗" },
   { label: "FinTech & healthcare domain expertise", icon: "💡" },
-  { label: "MBA strategy & consulting toolkit", icon: "🎓" },
 ];

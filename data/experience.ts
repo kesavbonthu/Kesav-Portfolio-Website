@@ -8,7 +8,7 @@ export interface Experience {
   highlights: string[];
   metrics: { value: string; label: string }[];
   skills: string[];
-  type: "full-time" | "consulting" | "education";
+  type: "full-time" | "education";
   logo?: string;
 }
 
@@ -135,58 +135,6 @@ export const experiences: Experience[] = [
       "CI/CD",
       "Platform Modernization",
       "Production Reliability",
-    ],
-  },
-  {
-    company: "Microsoft",
-    role: "Operations Strategy, MBA Consultant",
-    startDate: "Mar 2026",
-    endDate: "Jun 2026",
-    location: "Seattle, WA",
-    type: "consulting",
-    summary:
-      "Worked on a Microsoft Unified consulting project focused on standardizing Sales BOM creation, improving sales enablement workflows, and exploring AI-assisted feedback approaches",
-    highlights: [
-      "Recommended standardized Sales BOM structure with sizing model (S/M/L)",
-      "Designed asset taxonomy and governance structure",
-      "Proposed AI-assisted first-draft and seller feedback workflow",
-      "Identified seller adoption tracking and usage monitoring frameworks",
-      "Delivered executive-ready presentation with prioritized recommendations",
-    ],
-    metrics: [],
-    skills: [
-      "MBA Consulting",
-      "Sales Enablement",
-      "Process Design",
-      "AI Workflow Ideation",
-      "Stakeholder Alignment",
-      "Executive Communication",
-    ],
-  },
-  {
-    company: "Amazon Business",
-    role: "Product & Growth Strategy, MBA Consultant",
-    startDate: "Jan 2026",
-    endDate: "Mar 2026",
-    location: "Seattle, WA",
-    type: "consulting",
-    summary:
-      "Delivered payment strategy recommendations for Amazon Business Mexico by analyzing market dynamics, competitive landscape, customer segmentation, and payment rail adoption",
-    highlights: [
-      "Analyzed SMB customer segmentation across banked, underbanked, and cash-first segments",
-      "Benchmarked competitor payment options and rails",
-      "Prioritized payment rail adoption for SMB acquisition and growth",
-      "Developed embedded finance opportunity analysis",
-      "Delivered go-to-market recommendations with market sizing",
-    ],
-    metrics: [],
-    skills: [
-      "Market Research",
-      "B2B Commerce Strategy",
-      "Payments Strategy",
-      "Customer Segmentation",
-      "Growth Modeling",
-      "Consulting Communication",
     ],
   },
   {
